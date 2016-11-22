@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66D86D65F4E55CF91793F9E2 /* libPods-eventAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D9FF7D8BDBF218E6E57171 /* libPods-eventAppTests.a */; };
+		8EA1F32FC3CE3F61CAD3212C /* libPods-eventApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 275720FC4FFEDB1C4BB97D55 /* libPods-eventApp.a */; };
 		FAB8DF6B1DE386350091B7B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB8DF6A1DE386350091B7B1 /* main.m */; };
 		FAB8DF6E1DE386350091B7B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB8DF6D1DE386350091B7B1 /* AppDelegate.m */; };
 		FAB8DF711DE386350091B7B1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB8DF701DE386350091B7B1 /* ViewController.m */; };
 		FAB8DF741DE386360091B7B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB8DF721DE386360091B7B1 /* Main.storyboard */; };
 		FAB8DF761DE386360091B7B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB8DF751DE386360091B7B1 /* Assets.xcassets */; };
 		FAB8DF791DE386360091B7B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB8DF771DE386360091B7B1 /* LaunchScreen.storyboard */; };
-		FAB8DF841DE386360091B7B1 /* eventAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB8DF831DE386360091B7B1 /* eventAppTests.m */; };
 		FAB8DF8F1DE386360091B7B1 /* eventAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB8DF8E1DE386360091B7B1 /* eventAppUITests.m */; };
+		FAB8DF9D1DE3866B0091B7B1 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FAB8DF9C1DE3866B0091B7B1 /* Podfile */; };
+		FAB8DFA91DE39E6B0091B7B1 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB8DFA81DE39E6B0091B7B1 /* Event.m */; };
+		FAB8DFAB1DE3AB880091B7B1 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB8DFAA1DE3AB880091B7B1 /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		275720FC4FFEDB1C4BB97D55 /* libPods-eventApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-eventApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C8F0C82CF611CAC46D83D54 /* Pods-eventAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eventAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-eventAppTests/Pods-eventAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		725C152859638777503B8A0F /* Pods-eventApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eventApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-eventApp/Pods-eventApp.debug.xcconfig"; sourceTree = "<group>"; };
+		8EA7B8E5537F6EE8F8DF0749 /* Pods-eventAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eventAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-eventAppTests/Pods-eventAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		A7D9FF7D8BDBF218E6E57171 /* libPods-eventAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-eventAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB06548DC021599EE97C9AF8 /* Pods-eventApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eventApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-eventApp/Pods-eventApp.release.xcconfig"; sourceTree = "<group>"; };
 		FAB8DF661DE386350091B7B1 /* eventApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eventApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB8DF6A1DE386350091B7B1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FAB8DF6C1DE386350091B7B1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -46,11 +56,14 @@
 		FAB8DF781DE386360091B7B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAB8DF7A1DE386360091B7B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAB8DF7F1DE386360091B7B1 /* eventAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eventAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FAB8DF831DE386360091B7B1 /* eventAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = eventAppTests.m; sourceTree = "<group>"; };
 		FAB8DF851DE386360091B7B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAB8DF8A1DE386360091B7B1 /* eventAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eventAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB8DF8E1DE386360091B7B1 /* eventAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = eventAppUITests.m; sourceTree = "<group>"; };
 		FAB8DF901DE386360091B7B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAB8DF9C1DE3866B0091B7B1 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		FAB8DFA71DE39E6B0091B7B1 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		FAB8DFA81DE39E6B0091B7B1 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		FAB8DFAA1DE3AB880091B7B1 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAB8DFAB1DE3AB880091B7B1 /* libsqlite3.tbd in Frameworks */,
+				8EA1F32FC3CE3F61CAD3212C /* libPods-eventApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66D86D65F4E55CF91793F9E2 /* libPods-eventAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,13 +94,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3314EF63AFD99DD4FF731159 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAB8DFAA1DE3AB880091B7B1 /* libsqlite3.tbd */,
+				275720FC4FFEDB1C4BB97D55 /* libPods-eventApp.a */,
+				A7D9FF7D8BDBF218E6E57171 /* libPods-eventAppTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7FD2EB8B39D7AEF5C5F0D662 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				725C152859638777503B8A0F /* Pods-eventApp.debug.xcconfig */,
+				DB06548DC021599EE97C9AF8 /* Pods-eventApp.release.xcconfig */,
+				3C8F0C82CF611CAC46D83D54 /* Pods-eventAppTests.debug.xcconfig */,
+				8EA7B8E5537F6EE8F8DF0749 /* Pods-eventAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FAB8DF5D1DE386350091B7B1 = {
 			isa = PBXGroup;
 			children = (
+				FAB8DF9C1DE3866B0091B7B1 /* Podfile */,
 				FAB8DF681DE386350091B7B1 /* eventApp */,
 				FAB8DF821DE386360091B7B1 /* eventAppTests */,
 				FAB8DF8D1DE386360091B7B1 /* eventAppUITests */,
 				FAB8DF671DE386350091B7B1 /* Products */,
+				7FD2EB8B39D7AEF5C5F0D662 /* Pods */,
+				3314EF63AFD99DD4FF731159 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +157,7 @@
 		FAB8DF691DE386350091B7B1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FAB8DFA61DE39E2E0091B7B1 /* DTO */,
 				FAB8DF6A1DE386350091B7B1 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -125,7 +166,6 @@
 		FAB8DF821DE386360091B7B1 /* eventAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				FAB8DF831DE386360091B7B1 /* eventAppTests.m */,
 				FAB8DF851DE386360091B7B1 /* Info.plist */,
 			);
 			path = eventAppTests;
@@ -140,6 +180,15 @@
 			path = eventAppUITests;
 			sourceTree = "<group>";
 		};
+		FAB8DFA61DE39E2E0091B7B1 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				FAB8DFA71DE39E6B0091B7B1 /* Event.h */,
+				FAB8DFA81DE39E6B0091B7B1 /* Event.m */,
+			);
+			name = DTO;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +196,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAB8DF931DE386360091B7B1 /* Build configuration list for PBXNativeTarget "eventApp" */;
 			buildPhases = (
+				14FBE9EE736A2C10AD7AA072 /* [CP] Check Pods Manifest.lock */,
 				FAB8DF621DE386350091B7B1 /* Sources */,
 				FAB8DF631DE386350091B7B1 /* Frameworks */,
 				FAB8DF641DE386350091B7B1 /* Resources */,
+				B2FD4739FDD13ADFFC2C5D3E /* [CP] Embed Pods Frameworks */,
+				565C3CA0D90C3E1BD36FD5AD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,9 +216,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAB8DF961DE386360091B7B1 /* Build configuration list for PBXNativeTarget "eventAppTests" */;
 			buildPhases = (
+				238C7D3A456F322782081914 /* [CP] Check Pods Manifest.lock */,
 				FAB8DF7B1DE386360091B7B1 /* Sources */,
 				FAB8DF7C1DE386360091B7B1 /* Frameworks */,
 				FAB8DF7D1DE386360091B7B1 /* Resources */,
+				6421131E7A12ABA55D98ABF1 /* [CP] Embed Pods Frameworks */,
+				B7DE0CA0F171D20651B59ECC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -248,6 +303,7 @@
 			files = (
 				FAB8DF791DE386360091B7B1 /* LaunchScreen.storyboard in Resources */,
 				FAB8DF761DE386360091B7B1 /* Assets.xcassets in Resources */,
+				FAB8DF9D1DE3866B0091B7B1 /* Podfile in Resources */,
 				FAB8DF741DE386360091B7B1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,12 +324,106 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		14FBE9EE736A2C10AD7AA072 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		238C7D3A456F322782081914 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		565C3CA0D90C3E1BD36FD5AD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-eventApp/Pods-eventApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6421131E7A12ABA55D98ABF1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-eventAppTests/Pods-eventAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2FD4739FDD13ADFFC2C5D3E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-eventApp/Pods-eventApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7DE0CA0F171D20651B59ECC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-eventAppTests/Pods-eventAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FAB8DF621DE386350091B7B1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				FAB8DF711DE386350091B7B1 /* ViewController.m in Sources */,
+				FAB8DFA91DE39E6B0091B7B1 /* Event.m in Sources */,
 				FAB8DF6E1DE386350091B7B1 /* AppDelegate.m in Sources */,
 				FAB8DF6B1DE386350091B7B1 /* main.m in Sources */,
 			);
@@ -283,7 +433,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAB8DF841DE386360091B7B1 /* eventAppTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +569,7 @@
 		};
 		FAB8DF941DE386360091B7B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 725C152859638777503B8A0F /* Pods-eventApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = eventApp/Info.plist;
@@ -431,6 +581,7 @@
 		};
 		FAB8DF951DE386360091B7B1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB06548DC021599EE97C9AF8 /* Pods-eventApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = eventApp/Info.plist;
@@ -442,6 +593,7 @@
 		};
 		FAB8DF971DE386360091B7B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C8F0C82CF611CAC46D83D54 /* Pods-eventAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = eventAppTests/Info.plist;
@@ -454,10 +606,12 @@
 		};
 		FAB8DF981DE386360091B7B1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EA7B8E5537F6EE8F8DF0749 /* Pods-eventAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = eventAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.eventAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/eventApp.app/eventApp";
@@ -505,6 +659,7 @@
 				FAB8DF951DE386360091B7B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FAB8DF961DE386360091B7B1 /* Build configuration list for PBXNativeTarget "eventAppTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +668,7 @@
 				FAB8DF981DE386360091B7B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FAB8DF991DE386360091B7B1 /* Build configuration list for PBXNativeTarget "eventAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +677,7 @@
 				FAB8DF9B1DE386360091B7B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

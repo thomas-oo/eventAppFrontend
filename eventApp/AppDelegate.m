@@ -1,13 +1,6 @@
-//
-//  AppDelegate.m
-//  eventApp
-//
-//  Created by Oo, Thein on 2016-11-21.
-//  Copyright © 2016 Oo, Thein. All rights reserved.
-//
-
 #import "AppDelegate.h"
-
+#import "Parse/Parse.h"
+#import "Event.h"
 @interface AppDelegate ()
 
 @end
@@ -17,10 +10,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [Parse enableLocalDatastore];
+    [Parse initializeWithConfiguration:[ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
+        configuration.applicationId = @"myAppId";
+        configuration.server = @"https://eventapptest.herokuapp.com/parse";
+        configuration.localDatastoreEnabled = YES;
+    }]];
+    
+    PFGeoPoint *pfEventLocation = [PFGeoPoint geoPointWithLatitude:40.0 longitude:-30.0];
+    Event *pfEvent = [[Event alloc] initEventWithName:@"Test" Host:@"Thomas Oo" StartTime:[[NSDate alloc] init] EndTime:[[NSDate alloc] init] Location:pfEventLocation Price:@30];
+    [pfEvent saveInBackground];
     return YES;
 }
-
-
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

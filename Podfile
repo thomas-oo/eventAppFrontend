@@ -1,5 +1,6 @@
 target 'eventApp' do
 pod 'Parse'
+pod 'ParseUI'
 pod 'ParseFacebookUtilsV4'
 pod 'FBSDKLoginKit'
 pod 'FBSDKCoreKit'

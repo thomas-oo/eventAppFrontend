@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
+#import "Parse/Parse.h"
+#import "ParseUI/ParseUI.h"
+@interface ViewController : UIViewController<PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 
 
 @end

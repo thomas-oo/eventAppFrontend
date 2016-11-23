@@ -23,16 +23,6 @@
     /*PFGeoPoint *pfEventLocation = [PFGeoPoint geoPointWithLatitude:40.0 longitude:-30.0];
     Event *pfEvent = [[Event alloc] initEventWithName:@"Test" Host:@"Thomas Oo" StartTime:[[NSDate alloc] init] EndTime:[[NSDate alloc] init] Location:pfEventLocation Price:@30];
     [pfEvent saveInBackground];*/
-    
-    [PFFacebookUtils logInInBackgroundWithReadPermissions:[NSArray arrayWithObjects:@"user_events", nil] block:^(PFUser *user, NSError *error) {
-        if (!user) {
-            NSLog(@"Uh oh. The user cancelled the Facebook login.");
-        } else if (user.isNew) {
-            NSLog(@"User signed up and logged in through Facebook!");
-        } else {
-            NSLog(@"User logged in through Facebook!");
-        }
-    }];
 
     return YES;
 }

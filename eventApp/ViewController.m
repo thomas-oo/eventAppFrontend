@@ -1,11 +1,11 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-
+@property Event *pfEvent;
 @end
 
 @implementation ViewController
-
+@synthesize pfEvent;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -54,6 +54,20 @@
 - (IBAction)logout:(id)sender {
     [PFUser logOut];
 }
+
+- (IBAction)createEvents:(id)sender {
+    PFGeoPoint *pfEventLocation = [PFGeoPoint geoPointWithLatitude:40.0 longitude:-30.0];
+    pfEvent = [[Event alloc] initEventWithName:@"Test" Host:@"Thomas Oo" StartTime:[[NSDate alloc] init] EndTime:[[NSDate alloc] init] Location:pfEventLocation Price:@30];
+    [pfEvent setValue:[PFUser currentUser] forKey:@"Creator"];
+    [pfEvent saveInBackground];
+}
+- (IBAction)updateDateOfEvent:(id)sender {
+    [pfEvent setStartTime:[[NSDate alloc] init]];
+    [pfEvent setEndTime:[[NSDate alloc] init]];
+    [pfEvent saveInBackground];
+}
+
+
 
 
 

@@ -29,6 +29,22 @@
                                     <action selector="logout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bte-n9-YRM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vmo-1Q-4Lb">
+                                <rect key="frame" x="108" y="442" width="158" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Create and Link Events"/>
+                                <connections>
+                                    <action selector="createEvents:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DOb-5j-rKZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zct-4a-PKG">
+                                <rect key="frame" x="88" y="480" width="199" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Update date of current event"/>
+                                <connections>
+                                    <action selector="updateDateOfEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v25-cl-Cws"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>

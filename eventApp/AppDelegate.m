@@ -19,11 +19,6 @@
         configuration.localDatastoreEnabled = YES;
     }]];
     [PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:launchOptions];
-    
-    /*PFGeoPoint *pfEventLocation = [PFGeoPoint geoPointWithLatitude:40.0 longitude:-30.0];
-    Event *pfEvent = [[Event alloc] initEventWithName:@"Test" Host:@"Thomas Oo" StartTime:[[NSDate alloc] init] EndTime:[[NSDate alloc] init] Location:pfEventLocation Price:@30];
-    [pfEvent saveInBackground];*/
-
     return YES;
 }
 

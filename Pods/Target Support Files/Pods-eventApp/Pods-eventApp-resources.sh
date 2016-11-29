@@ -81,6 +81,8 @@ EOM
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "FBSDKCoreKit/FacebookSDKStrings.bundle"
+  install_resource "GoogleMaps/Subspecs/Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle"
+  install_resource "GooglePlaces/Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle"
   install_resource "Parse/Parse/Resources/en.lproj"
   install_resource "ParseUI/ParseUI/Resources/Localization/en.lproj"
   install_resource "ParseUI/ParseUI/Resources/Localization/fr.lproj"
@@ -88,6 +90,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "FBSDKCoreKit/FacebookSDKStrings.bundle"
+  install_resource "GoogleMaps/Subspecs/Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle"
+  install_resource "GooglePlaces/Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle"
   install_resource "Parse/Parse/Resources/en.lproj"
   install_resource "ParseUI/ParseUI/Resources/Localization/en.lproj"
   install_resource "ParseUI/ParseUI/Resources/Localization/fr.lproj"

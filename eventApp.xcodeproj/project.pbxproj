@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		66D86D65F4E55CF91793F9E2 /* libPods-eventAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D9FF7D8BDBF218E6E57171 /* libPods-eventAppTests.a */; };
 		8EA1F32FC3CE3F61CAD3212C /* libPods-eventApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 275720FC4FFEDB1C4BB97D55 /* libPods-eventApp.a */; };
+		FAA8C4541DED472600C3DD0E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA8C4531DED472600C3DD0E /* MapViewController.m */; };
 		FAB8DF6B1DE386350091B7B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB8DF6A1DE386350091B7B1 /* main.m */; };
 		FAB8DF6E1DE386350091B7B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB8DF6D1DE386350091B7B1 /* AppDelegate.m */; };
 		FAB8DF711DE386350091B7B1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB8DF701DE386350091B7B1 /* ViewController.m */; };
@@ -45,6 +46,8 @@
 		8EA7B8E5537F6EE8F8DF0749 /* Pods-eventAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eventAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-eventAppTests/Pods-eventAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		A7D9FF7D8BDBF218E6E57171 /* libPods-eventAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-eventAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB06548DC021599EE97C9AF8 /* Pods-eventApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eventApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-eventApp/Pods-eventApp.release.xcconfig"; sourceTree = "<group>"; };
+		FAA8C4521DED472600C3DD0E /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		FAA8C4531DED472600C3DD0E /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		FAB8DF661DE386350091B7B1 /* eventApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eventApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB8DF6A1DE386350091B7B1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FAB8DF6C1DE386350091B7B1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 				FAB8DFD41DE4BE960091B7B1 /* eventApp.entitlements */,
 				FAB8DF6C1DE386350091B7B1 /* AppDelegate.h */,
 				FAB8DF6D1DE386350091B7B1 /* AppDelegate.m */,
+				FAA8C4521DED472600C3DD0E /* MapViewController.h */,
+				FAA8C4531DED472600C3DD0E /* MapViewController.m */,
 				FAB8DF6F1DE386350091B7B1 /* ViewController.h */,
 				FAB8DF701DE386350091B7B1 /* ViewController.m */,
 				FAB8DF721DE386360091B7B1 /* Main.storyboard */,
@@ -432,6 +437,7 @@
 			files = (
 				FAB8DF711DE386350091B7B1 /* ViewController.m in Sources */,
 				FAB8DFA91DE39E6B0091B7B1 /* Event.m in Sources */,
+				FAA8C4541DED472600C3DD0E /* MapViewController.m in Sources */,
 				FAB8DF6E1DE386350091B7B1 /* AppDelegate.m in Sources */,
 				FAB8DF6B1DE386350091B7B1 /* main.m in Sources */,
 			);

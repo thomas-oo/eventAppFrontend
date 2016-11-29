@@ -3,12 +3,15 @@
 #import "Event.h"
 #import "FBSDKCoreKit/FBSDKCoreKit.h"
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
+#import <GoogleMaps/GoogleMaps.h>
+#import <GooglePlaces/GooglePlaces.h>
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
+NSString* APIKey = @"AIzaSyBAGJGoCpB3hj37PLfb7MKeWnJN3pikxLU";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch
@@ -19,6 +22,9 @@
         configuration.localDatastoreEnabled = YES;
     }]];
     [PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:launchOptions];
+    
+    [GMSServices provideAPIKey:APIKey];
+    [GMSPlacesClient provideAPIKey:APIKey];
     return YES;
 }
 

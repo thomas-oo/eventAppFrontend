@@ -606,7 +606,7 @@
 				);
 				INFOPLIST_FILE = eventApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.eventApp1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.eventApp2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -626,7 +626,7 @@
 				);
 				INFOPLIST_FILE = eventApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.eventApp1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.eventApp2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

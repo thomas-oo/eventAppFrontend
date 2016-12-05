@@ -7,29 +7,46 @@
 @end
 
 @implementation MapViewController
-
+GMSMapView *mapView;
+BOOL firstLocationUpdate;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:45.5
-                                                            longitude:-73.6
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:0
+                                                            longitude:0
                                                                  zoom:15];
-    GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-    mapView.myLocationEnabled = true;
-    self.view = mapView;
+    mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+    mapView.myLocationEnabled = YES;
+    mapView.settings.compassButton = YES;
+    mapView.settings.myLocationButton = YES;
+    [mapView setMinZoom:10 maxZoom:20];
     
-    GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.position = CLLocationCoordinate2DMake(45.5, -73.6);
-    marker.title = @"Home";
-    marker.snippet = @"This is your home";
-    marker.map = mapView;
+    [mapView addObserver:self
+               forKeyPath:@"myLocation"
+                  options:NSKeyValueObservingOptionNew
+                  context:NULL];
+    
+    self.view = mapView;
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context {
+    if (!firstLocationUpdate) {
+        // If the first location update has not yet been recieved, then jump to that
+        // location.
+        firstLocationUpdate = YES;
+        CLLocation *location = [change objectForKey:NSKeyValueChangeNewKey];
+        mapView.camera = [GMSCameraPosition cameraWithTarget:location.coordinate
+                                                         zoom:15];
+        [mapView removeObserver:self forKeyPath:@"myLocation"];
+    }
+}
 /*
 #pragma mark - Navigation
 

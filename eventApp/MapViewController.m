@@ -3,25 +3,27 @@
 #import <GooglePlaces/GooglePlaces.h>
 
 @interface MapViewController ()
-
+@property (strong, nonatomic) IBOutlet UIImageView *marker;
+@property (weak, nonatomic) IBOutlet UIButton *addButton;
+@property (strong, nonatomic) IBOutlet UIButton *cancel;
+@property (strong, nonatomic) IBOutlet UIButton *doneButton;
 @end
 
 @implementation MapViewController
-GMSMapView *mapView;
 BOOL firstLocationUpdate;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:0
-                                                            longitude:0
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:100
+                                                            longitude:100
                                                                  zoom:15];
-    mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-    mapView.myLocationEnabled = YES;
-    mapView.settings.compassButton = YES;
-    mapView.settings.myLocationButton = YES;
-    [mapView setMinZoom:10 maxZoom:20];
+    self.mapView.camera = camera;
+    self.mapView.myLocationEnabled = YES;
+    self.mapView.settings.compassButton = YES;
+    self.mapView.settings.myLocationButton = YES;
+    [self.mapView setMinZoom:10 maxZoom:20];
     
-    [mapView addObserver:self
+    [self.mapView addObserver:self
                forKeyPath:@"myLocation"
                   options:NSKeyValueObservingOptionNew
                   context:NULL];
@@ -34,9 +36,37 @@ BOOL firstLocationUpdate;
     if (!style) {
         NSLog(@"The style definition could not be loaded: %@", error);
     }
-    mapView.mapStyle = style;
-    self.view = mapView;
+    self.mapView.mapStyle = style;
+    self.mapView.delegate = self;
 }
+
+-(void)mapView:(GMSMapView *)mapView idleAtCameraPosition:(nonnull GMSCameraPosition *)position{
+    if(!_marker.hidden){
+        [_doneButton setHidden:NO];
+    }
+}
+
+-(void)mapView:(GMSMapView *)mapView willMove:(BOOL)gesture{
+    if(!_marker.hidden){
+        [_doneButton setHidden:YES];
+    }
+}
+-(void)mapView:(GMSMapView *)mapView didTapAtCoordinate:(CLLocationCoordinate2D)coordinate{
+    [self.mapView animateToLocation:coordinate];
+}
+- (IBAction)addEventButtonClicked:(id)sender {
+    [_addButton setHidden:YES];
+    [_marker setHidden:NO];
+    [_cancel setHidden:NO];
+    [_doneButton setHidden:NO];
+}
+- (IBAction)cancelButtonClicked:(id)sender {
+    [_addButton setHidden:NO];
+    [_marker setHidden:YES];
+    [_cancel setHidden:YES];
+    [_doneButton setHidden:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -51,9 +81,9 @@ BOOL firstLocationUpdate;
         // location.
         firstLocationUpdate = YES;
         CLLocation *location = [change objectForKey:NSKeyValueChangeNewKey];
-        mapView.camera = [GMSCameraPosition cameraWithTarget:location.coordinate
+        self.mapView.camera = [GMSCameraPosition cameraWithTarget:location.coordinate
                                                          zoom:15];
-        [mapView removeObserver:self forKeyPath:@"myLocation"];
+        [self.mapView removeObserver:self forKeyPath:@"myLocation"];
     }
 }
 /*

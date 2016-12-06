@@ -7,6 +7,7 @@ pod 'FBSDKCoreKit'
 pod 'FBSDKShareKit'
 pod 'GoogleMaps'
 pod 'GooglePlaces'
+
 target 'eventAppTests' do
     inherit! :search_paths
 end

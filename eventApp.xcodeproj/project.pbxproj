@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		66D86D65F4E55CF91793F9E2 /* libPods-eventAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D9FF7D8BDBF218E6E57171 /* libPods-eventAppTests.a */; };
-		8EA1F32FC3CE3F61CAD3212C /* libPods-eventApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 275720FC4FFEDB1C4BB97D55 /* libPods-eventApp.a */; };
+		3E3522634B0CCB3D8BC35626 /* libPods-eventAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9FC7DC6B09FBA63186AE5B /* libPods-eventAppTests.a */; };
+		B28833C84B5EB1DFB5F7A8F2 /* libPods-eventApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94747CEFE9B5A722FF4B550A /* libPods-eventApp.a */; };
 		E914B8731DF5317B00D55EE9 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E914B8721DF5317B00D55EE9 /* LogInViewController.m */; };
 		E914B8761DF5505600D55EE9 /* SanFranciscoText-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E914B8751DF54F1C00D55EE9 /* SanFranciscoText-Light.ttf */; };
 		E914B8781DF6304200D55EE9 /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = E914B8771DF6304200D55EE9 /* style.json */; };
@@ -45,11 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		275720FC4FFEDB1C4BB97D55 /* libPods-eventApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-eventApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C8F0C82CF611CAC46D83D54 /* Pods-eventAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eventAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-eventAppTests/Pods-eventAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		725C152859638777503B8A0F /* Pods-eventApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eventApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-eventApp/Pods-eventApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8EA7B8E5537F6EE8F8DF0749 /* Pods-eventAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eventAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-eventAppTests/Pods-eventAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		A7D9FF7D8BDBF218E6E57171 /* libPods-eventAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-eventAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94747CEFE9B5A722FF4B550A /* libPods-eventApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-eventApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE9FC7DC6B09FBA63186AE5B /* libPods-eventAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-eventAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB06548DC021599EE97C9AF8 /* Pods-eventApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eventApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-eventApp/Pods-eventApp.release.xcconfig"; sourceTree = "<group>"; };
 		E914B8711DF5317B00D55EE9 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		E914B8721DF5317B00D55EE9 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAB8DFAB1DE3AB880091B7B1 /* libsqlite3.tbd in Frameworks */,
-				8EA1F32FC3CE3F61CAD3212C /* libPods-eventApp.a in Frameworks */,
+				B28833C84B5EB1DFB5F7A8F2 /* libPods-eventApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66D86D65F4E55CF91793F9E2 /* libPods-eventAppTests.a in Frameworks */,
+				3E3522634B0CCB3D8BC35626 /* libPods-eventAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,8 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				FAB8DFAA1DE3AB880091B7B1 /* libsqlite3.tbd */,
-				275720FC4FFEDB1C4BB97D55 /* libPods-eventApp.a */,
-				A7D9FF7D8BDBF218E6E57171 /* libPods-eventAppTests.a */,
+				94747CEFE9B5A722FF4B550A /* libPods-eventApp.a */,
+				AE9FC7DC6B09FBA63186AE5B /* libPods-eventAppTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

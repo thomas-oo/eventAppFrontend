@@ -55,7 +55,7 @@
             </objects>
             <point key="canvasLocation" x="1463" y="45"/>
         </scene>
-        <!--Map-->
+        <!--Explore-->
         <scene sceneID="fY8-08-GeY">
             <objects>
                 <viewController id="8WM-Eo-veR" customClass="MapViewController" sceneMemberID="viewController">
@@ -64,17 +64,18 @@
                         <viewControllerLayoutGuide type="bottom" id="vnF-S5-sLn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BoB-9H-fLQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="button_compass.png" id="Xe5-5F-Ub6"/>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="Location" id="Xe5-5F-Ub6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TQc-Bb-0PW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="71" y="93"/>
+            <point key="canvasLocation" x="70" y="366"/>
         </scene>
-        <!--Item 2-->
+        <!--Profile-->
         <scene sceneID="n3M-cb-CkF">
             <objects>
                 <viewController id="odS-5U-t4g" sceneMemberID="viewController">
@@ -83,17 +84,18 @@
                         <viewControllerLayoutGuide type="bottom" id="sBA-4A-uaS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5Qm-hv-VIZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" image="button_compass.png" id="H1H-se-GbQ"/>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Account" id="H1H-se-GbQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fz5-nl-MF4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="796" y="-324"/>
         </scene>
-        <!--Item 1-->
+        <!--Search-->
         <scene sceneID="xM9-Z7-gFC">
             <objects>
                 <viewController id="7c6-NR-ZnR" sceneMemberID="viewController">
@@ -102,11 +104,12 @@
                         <viewControllerLayoutGuide type="bottom" id="xV5-oW-O8G"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yJ9-Qd-pFO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" image="button_compass.png" id="RrU-o2-Pvu"/>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="Search" id="RrU-o2-Pvu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NM9-HL-hHz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -116,15 +119,17 @@
         <scene sceneID="9mq-j9-2EY">
             <objects>
                 <tabBarController storyboardIdentifier="MainTabBar" id="poz-aI-3ex" customClass="MainMenuViewController" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="DqW-Ks-3Ps">
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="DqW-Ks-3Ps">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="8WM-Eo-veR" kind="relationship" relationship="viewControllers" id="dnK-3b-key"/>
                         <segue destination="7c6-NR-ZnR" kind="relationship" relationship="viewControllers" id="tpr-bk-edo"/>
                         <segue destination="odS-5U-t4g" kind="relationship" relationship="viewControllers" id="wm3-48-D7I"/>
-                        <segue destination="8WM-Eo-veR" kind="relationship" relationship="viewControllers" id="BCC-hY-JWA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fxc-XE-CyU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -151,6 +156,7 @@
                         <constraints>
                             <constraint firstItem="XEf-un-QCn" firstAttribute="top" secondItem="l2I-yY-hTZ" secondAttribute="bottom" id="1hV-VB-5j4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XEf-un-QCn" secondAttribute="trailing" id="Dqh-mI-qQD"/>
+                            <constraint firstItem="XEf-un-QCn" firstAttribute="top" secondItem="aaL-6J-kO7" secondAttribute="top" id="FSP-sA-rLe"/>
                             <constraint firstItem="HEa-WX-lUN" firstAttribute="top" secondItem="XEf-un-QCn" secondAttribute="bottom" id="diJ-LJ-4dK"/>
                             <constraint firstItem="XEf-un-QCn" firstAttribute="leading" secondItem="aaL-6J-kO7" secondAttribute="leadingMargin" id="qf8-U4-jZf"/>
                         </constraints>
@@ -162,7 +168,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="button_compass.png" width="40" height="40"/>
+        <image name="Account" width="25" height="25"/>
+        <image name="Location" width="20" height="19"/>
+        <image name="Search" width="20" height="21"/>
         <image name="launch_bg" width="4000" height="2667"/>
     </resources>
 </document>

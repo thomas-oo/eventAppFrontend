@@ -55,7 +55,7 @@
             </objects>
             <point key="canvasLocation" x="1463" y="45"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Map-->
         <scene sceneID="fY8-08-GeY">
             <objects>
                 <viewController id="8WM-Eo-veR" customClass="MapViewController" sceneMemberID="viewController">
@@ -68,10 +68,68 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Map" image="button_compass.png" id="Xe5-5F-Ub6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TQc-Bb-0PW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-58" y="45"/>
+            <point key="canvasLocation" x="71" y="93"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="n3M-cb-CkF">
+            <objects>
+                <viewController id="odS-5U-t4g" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9xF-8J-NWV"/>
+                        <viewControllerLayoutGuide type="bottom" id="sBA-4A-uaS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5Qm-hv-VIZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" image="button_compass.png" id="H1H-se-GbQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fz5-nl-MF4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="796" y="-324"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="xM9-Z7-gFC">
+            <objects>
+                <viewController id="7c6-NR-ZnR" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Oak-o6-fzw"/>
+                        <viewControllerLayoutGuide type="bottom" id="xV5-oW-O8G"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yJ9-Qd-pFO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" image="button_compass.png" id="RrU-o2-Pvu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NM9-HL-hHz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="796" y="-979"/>
+        </scene>
+        <!--Main Menu View Controller-->
+        <scene sceneID="9mq-j9-2EY">
+            <objects>
+                <tabBarController storyboardIdentifier="MainTabBar" id="poz-aI-3ex" customClass="MainMenuViewController" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="DqW-Ks-3Ps">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="7c6-NR-ZnR" kind="relationship" relationship="viewControllers" id="tpr-bk-edo"/>
+                        <segue destination="odS-5U-t4g" kind="relationship" relationship="viewControllers" id="wm3-48-D7I"/>
+                        <segue destination="8WM-Eo-veR" kind="relationship" relationship="viewControllers" id="BCC-hY-JWA"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fxc-XE-CyU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-154" y="-652"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Na1-qY-mEn">
@@ -104,6 +162,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="button_compass.png" width="40" height="40"/>
         <image name="launch_bg" width="4000" height="2667"/>
     </resources>
 </document>

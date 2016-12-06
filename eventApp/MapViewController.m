@@ -27,16 +27,13 @@ BOOL firstLocationUpdate;
                   context:NULL];
     
     NSBundle *mainBundle = [NSBundle mainBundle];
-    NSURL *styleUrl = [mainBundle URLForResource:@"style" withExtension:@"json"];
+    //TODO: maybe implement a way to switch the map theme depending on the time
+    NSURL *styleUrl = [mainBundle URLForResource:@"styleDay" withExtension:@"json"];
     NSError *error;
-    
-    
-    // Set the map style by passing the URL for style.json.
     GMSMapStyle *style = [GMSMapStyle styleWithContentsOfFileURL:styleUrl error:&error];
     if (!style) {
         NSLog(@"The style definition could not be loaded: %@", error);
     }
-    
     mapView.mapStyle = style;
     self.view = mapView;
 }

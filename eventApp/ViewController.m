@@ -1,6 +1,8 @@
 #import "ViewController.h"
 #import "LogInViewController.h"
 #import "MapViewController.h"
+#import "MainMenuViewController.h"
+#import "AppDelegate.h"
 @interface ViewController ()
 @property Event *pfEvent;
 @end
@@ -42,8 +44,12 @@
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"You're logged in" message:@"Welcome to Event App" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *OKAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
         [self dismissViewControllerAnimated:YES completion:nil];
-        MapViewController *mapViewController = [[MapViewController alloc]init];
-        [self presentViewController:mapViewController animated:NO completion:nil];
+        //MapViewController *mapViewController = [[MapViewController alloc]init];
+        //[self presentViewController:mapViewController animated:NO completion:nil];
+        
+        MainMenuViewController *tabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainTabBar"];
+        [self presentViewController:tabBarController animated:NO completion:nil];
+        
     }];
     [alertController addAction:(OKAction)];
     [self presentViewController:alertController animated:YES completion:nil];

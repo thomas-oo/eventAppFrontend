@@ -3,26 +3,87 @@
 #import <GooglePlaces/GooglePlaces.h>
 
 @interface MapViewController ()
-
+@property (strong, nonatomic) IBOutlet UIImageView *marker;
+@property (weak, nonatomic) IBOutlet UIButton *addButton;
+@property (strong, nonatomic) IBOutlet UIButton *cancel;
+@property (strong, nonatomic) IBOutlet UIButton *doneButton;
+@property (strong, nonatomic) IBOutlet UILabel *addressLabel;
 @end
 
 @implementation MapViewController
-
+BOOL firstLocationUpdate;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:45.5
-                                                            longitude:-73.6
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:100
+                                                            longitude:100
                                                                  zoom:15];
-    GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-    mapView.myLocationEnabled = true;
-    self.view = mapView;
+    self.mapView.camera = camera;
+    self.mapView.myLocationEnabled = YES;
+    self.mapView.settings.compassButton = YES;
+    self.mapView.settings.myLocationButton = YES;
+    [self.mapView setMinZoom:10 maxZoom:20];
     
-    GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.position = CLLocationCoordinate2DMake(45.5, -73.6);
-    marker.title = @"Home";
-    marker.snippet = @"This is your home";
-    marker.map = mapView;
+    [self.mapView addObserver:self
+               forKeyPath:@"myLocation"
+                  options:NSKeyValueObservingOptionNew
+                  context:NULL];
+    
+    NSBundle *mainBundle = [NSBundle mainBundle];
+    //TODO: maybe implement a way to switch the map theme depending on the time
+    NSURL *styleUrl = [mainBundle URLForResource:@"style" withExtension:@"json"];
+    NSError *error;
+    GMSMapStyle *style = [GMSMapStyle styleWithContentsOfFileURL:styleUrl error:&error];
+    if (!style) {
+        NSLog(@"The style definition could not be loaded: %@", error);
+    }
+    self.mapView.mapStyle = style;
+    self.mapView.delegate = self;
+}
+
+-(void)mapView:(GMSMapView *)mapView idleAtCameraPosition:(nonnull GMSCameraPosition *)position{
+    if(!_marker.hidden){
+        [_doneButton setHidden:NO];
+        [_addressLabel setHidden:NO];
+        CLLocationCoordinate2D currentCoordinates = [position target];
+        
+        GMSGeocoder *geocoder = [[GMSGeocoder alloc]init];
+        [geocoder reverseGeocodeCoordinate:currentCoordinates completionHandler:^(GMSReverseGeocodeResponse* geocodeResponse,NSError*error){
+            if(error != nil){
+                NSLog(@"Error grabbing reverse geocode");
+            }else{
+                NSArray *addresslines = geocodeResponse.firstResult.lines;
+                NSMutableString* address = addresslines[0];
+                _addressLabel.text = address;
+            }
+        }];
+    }
+}
+
+-(void)mapView:(GMSMapView *)mapView willMove:(BOOL)gesture{
+    if(!_marker.hidden){
+        [_doneButton setHidden:YES];
+        [_addressLabel setHidden:YES];
+        _addressLabel.text = @"Searching address...";
+    }
+}
+-(void)mapView:(GMSMapView *)mapView didTapAtCoordinate:(CLLocationCoordinate2D)coordinate{
+    [self.mapView animateToLocation:coordinate];
+}
+- (IBAction)addEventButtonClicked:(id)sender {
+    [_addButton setHidden:YES];
+    [_marker setHidden:NO];
+    [_cancel setHidden:NO];
+    [_doneButton setHidden:NO];
+    [_addressLabel setHidden:NO];
+}
+- (IBAction)cancelButtonClicked:(id)sender {
+    [_addButton setHidden:NO];
+    [_marker setHidden:YES];
+    [_cancel setHidden:YES];
+    [_doneButton setHidden:YES];
+    [_addressLabel setHidden:YES];
+    _addressLabel.text = @"";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,6 +91,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context {
+    if (!firstLocationUpdate) {
+        // If the first location update has not yet been recieved, then jump to that
+        // location.
+        firstLocationUpdate = YES;
+        CLLocation *location = [change objectForKey:NSKeyValueChangeNewKey];
+        self.mapView.camera = [GMSCameraPosition cameraWithTarget:location.coordinate
+                                                         zoom:15];
+        [self.mapView removeObserver:self forKeyPath:@"myLocation"];
+    }
+}
 /*
 #pragma mark - Navigation
 

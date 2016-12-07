@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		66D86D65F4E55CF91793F9E2 /* libPods-eventAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D9FF7D8BDBF218E6E57171 /* libPods-eventAppTests.a */; };
-		8EA1F32FC3CE3F61CAD3212C /* libPods-eventApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 275720FC4FFEDB1C4BB97D55 /* libPods-eventApp.a */; };
+		7AC930A95B7FB159B000999E /* libPods-eventApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5982F00E521E6C0A50226C /* libPods-eventApp.a */; };
+		BCAFB2537805DE0363E12437 /* libPods-eventAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E3A6C9B00FF2A9F943082D /* libPods-eventAppTests.a */; };
 		E914B8731DF5317B00D55EE9 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E914B8721DF5317B00D55EE9 /* LogInViewController.m */; };
 		E914B8761DF5505600D55EE9 /* SanFranciscoText-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E914B8751DF54F1C00D55EE9 /* SanFranciscoText-Light.ttf */; };
+		E914B8781DF6304200D55EE9 /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = E914B8771DF6304200D55EE9 /* style.json */; };
+		E914B87A1DF637B700D55EE9 /* styleDay.json in Resources */ = {isa = PBXBuildFile; fileRef = E914B8791DF637B700D55EE9 /* styleDay.json */; };
+		E93C3CD31DF6A864006C9761 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93C3CD21DF6A864006C9761 /* MainMenuViewController.m */; };
 		FAA8C4541DED472600C3DD0E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA8C4531DED472600C3DD0E /* MapViewController.m */; };
 		FAB8DF6B1DE386350091B7B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB8DF6A1DE386350091B7B1 /* main.m */; };
 		FAB8DF6E1DE386350091B7B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB8DF6D1DE386350091B7B1 /* AppDelegate.m */; };
@@ -42,15 +45,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		275720FC4FFEDB1C4BB97D55 /* libPods-eventApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-eventApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E5982F00E521E6C0A50226C /* libPods-eventApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-eventApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C8F0C82CF611CAC46D83D54 /* Pods-eventAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eventAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-eventAppTests/Pods-eventAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		725C152859638777503B8A0F /* Pods-eventApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eventApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-eventApp/Pods-eventApp.debug.xcconfig"; sourceTree = "<group>"; };
+		78E3A6C9B00FF2A9F943082D /* libPods-eventAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-eventAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EA7B8E5537F6EE8F8DF0749 /* Pods-eventAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eventAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-eventAppTests/Pods-eventAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		A7D9FF7D8BDBF218E6E57171 /* libPods-eventAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-eventAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB06548DC021599EE97C9AF8 /* Pods-eventApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eventApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-eventApp/Pods-eventApp.release.xcconfig"; sourceTree = "<group>"; };
 		E914B8711DF5317B00D55EE9 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		E914B8721DF5317B00D55EE9 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		E914B8751DF54F1C00D55EE9 /* SanFranciscoText-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-Light.ttf"; sourceTree = "<group>"; };
+		E914B8771DF6304200D55EE9 /* style.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
+		E914B8791DF637B700D55EE9 /* styleDay.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = styleDay.json; sourceTree = "<group>"; };
+		E93C3CD11DF6A864006C9761 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		E93C3CD21DF6A864006C9761 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		FAA8C4521DED472600C3DD0E /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		FAA8C4531DED472600C3DD0E /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		FAB8DF661DE386350091B7B1 /* eventApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eventApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,7 +88,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAB8DFAB1DE3AB880091B7B1 /* libsqlite3.tbd in Frameworks */,
-				8EA1F32FC3CE3F61CAD3212C /* libPods-eventApp.a in Frameworks */,
+				7AC930A95B7FB159B000999E /* libPods-eventApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66D86D65F4E55CF91793F9E2 /* libPods-eventAppTests.a in Frameworks */,
+				BCAFB2537805DE0363E12437 /* libPods-eventAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,8 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				FAB8DFAA1DE3AB880091B7B1 /* libsqlite3.tbd */,
-				275720FC4FFEDB1C4BB97D55 /* libPods-eventApp.a */,
-				A7D9FF7D8BDBF218E6E57171 /* libPods-eventAppTests.a */,
+				2E5982F00E521E6C0A50226C /* libPods-eventApp.a */,
+				78E3A6C9B00FF2A9F943082D /* libPods-eventAppTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -165,6 +172,10 @@
 				FAB8DF771DE386360091B7B1 /* LaunchScreen.storyboard */,
 				FAB8DF7A1DE386360091B7B1 /* Info.plist */,
 				FAB8DF691DE386350091B7B1 /* Supporting Files */,
+				E914B8771DF6304200D55EE9 /* style.json */,
+				E914B8791DF637B700D55EE9 /* styleDay.json */,
+				E93C3CD11DF6A864006C9761 /* MainMenuViewController.h */,
+				E93C3CD21DF6A864006C9761 /* MainMenuViewController.m */,
 			);
 			path = eventApp;
 			sourceTree = "<group>";
@@ -323,8 +334,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E914B8761DF5505600D55EE9 /* SanFranciscoText-Light.ttf in Resources */,
+				E914B87A1DF637B700D55EE9 /* styleDay.json in Resources */,
 				FAB8DF791DE386360091B7B1 /* LaunchScreen.storyboard in Resources */,
 				FAB8DF761DE386360091B7B1 /* Assets.xcassets in Resources */,
+				E914B8781DF6304200D55EE9 /* style.json in Resources */,
 				FAB8DF9D1DE3866B0091B7B1 /* Podfile in Resources */,
 				FAB8DF741DE386360091B7B1 /* Main.storyboard in Resources */,
 			);
@@ -359,7 +372,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		238C7D3A456F322782081914 /* [CP] Check Pods Manifest.lock */ = {
@@ -374,7 +387,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		565C3CA0D90C3E1BD36FD5AD /* [CP] Copy Pods Resources */ = {
@@ -450,6 +463,7 @@
 				FAA8C4541DED472600C3DD0E /* MapViewController.m in Sources */,
 				FAB8DF6E1DE386350091B7B1 /* AppDelegate.m in Sources */,
 				FAB8DF6B1DE386350091B7B1 /* main.m in Sources */,
+				E93C3CD31DF6A864006C9761 /* MainMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,7 +620,7 @@
 				);
 				INFOPLIST_FILE = eventApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.eventApp1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.eventApp2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -626,7 +640,7 @@
 				);
 				INFOPLIST_FILE = eventApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.eventApp1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.eventApp2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

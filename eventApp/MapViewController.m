@@ -7,6 +7,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
 @property (strong, nonatomic) IBOutlet UIButton *cancel;
 @property (strong, nonatomic) IBOutlet UIButton *doneButton;
+@property (strong, nonatomic) IBOutlet UILabel *addressLabel;
 @end
 
 @implementation MapViewController
@@ -30,7 +31,7 @@ BOOL firstLocationUpdate;
     
     NSBundle *mainBundle = [NSBundle mainBundle];
     //TODO: maybe implement a way to switch the map theme depending on the time
-    NSURL *styleUrl = [mainBundle URLForResource:@"styleDay" withExtension:@"json"];
+    NSURL *styleUrl = [mainBundle URLForResource:@"style" withExtension:@"json"];
     NSError *error;
     GMSMapStyle *style = [GMSMapStyle styleWithContentsOfFileURL:styleUrl error:&error];
     if (!style) {
@@ -43,12 +44,27 @@ BOOL firstLocationUpdate;
 -(void)mapView:(GMSMapView *)mapView idleAtCameraPosition:(nonnull GMSCameraPosition *)position{
     if(!_marker.hidden){
         [_doneButton setHidden:NO];
+        [_addressLabel setHidden:NO];
+        CLLocationCoordinate2D currentCoordinates = [position target];
+        
+        GMSGeocoder *geocoder = [[GMSGeocoder alloc]init];
+        [geocoder reverseGeocodeCoordinate:currentCoordinates completionHandler:^(GMSReverseGeocodeResponse* geocodeResponse,NSError*error){
+            if(error != nil){
+                NSLog(@"Error grabbing reverse geocode");
+            }else{
+                NSArray *addresslines = geocodeResponse.firstResult.lines;
+                NSMutableString* address = addresslines[0];
+                _addressLabel.text = address;
+            }
+        }];
     }
 }
 
 -(void)mapView:(GMSMapView *)mapView willMove:(BOOL)gesture{
     if(!_marker.hidden){
         [_doneButton setHidden:YES];
+        [_addressLabel setHidden:YES];
+        _addressLabel.text = @"Searching address...";
     }
 }
 -(void)mapView:(GMSMapView *)mapView didTapAtCoordinate:(CLLocationCoordinate2D)coordinate{
@@ -59,12 +75,15 @@ BOOL firstLocationUpdate;
     [_marker setHidden:NO];
     [_cancel setHidden:NO];
     [_doneButton setHidden:NO];
+    [_addressLabel setHidden:NO];
 }
 - (IBAction)cancelButtonClicked:(id)sender {
     [_addButton setHidden:NO];
     [_marker setHidden:YES];
     [_cancel setHidden:YES];
     [_doneButton setHidden:YES];
+    [_addressLabel setHidden:YES];
+    _addressLabel.text = @"";
 }
 
 - (void)didReceiveMemoryWarning {

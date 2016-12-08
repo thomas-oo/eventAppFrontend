@@ -8,5 +8,6 @@
 + (id)sharedManager;
 - (id)init NS_UNAVAILABLE;
 - (GMSMarker*)createMarkerWithEvent:(Event*) event;
+- (NSArray*)createMarkersWithEvents:(NSArray*) events;
 
 @end

@@ -27,6 +27,8 @@ GMSCameraPosition* currentPosition;
     self.mapView.myLocationEnabled = YES;
     self.mapView.settings.compassButton = YES;
     self.mapView.settings.myLocationButton = YES;
+    self.mapView.settings.rotateGestures = NO;
+    self.mapView.settings.tiltGestures = NO;
     [self.mapView setMinZoom:10 maxZoom:20];
     
     [self.mapView addObserver:self
@@ -47,6 +49,7 @@ GMSCameraPosition* currentPosition;
 }
 
 -(void)mapView:(GMSMapView *)mapView idleAtCameraPosition:(nonnull GMSCameraPosition *)position{
+    [self loadMarkers];
     if(!_marker.hidden){
         [_doneButton setHidden:NO];
         [_addressLabel setHidden:NO];
@@ -115,6 +118,28 @@ GMSCameraPosition* currentPosition;
             NSArray *addresslines = geocodeResponse.firstResult.lines;
             NSMutableString* address = addresslines[0];
             _addressLabel.text = address;
+        }
+    }];
+}
+
+- (void)loadMarkers{
+    GMSCoordinateBounds *bounds = [[GMSCoordinateBounds alloc]initWithRegion:self.mapView.projection.visibleRegion];
+    PFQuery* markerQuery = [[PFQuery alloc] initWithClassName:@"Event"];
+    PFGeoPoint* southWest = [PFGeoPoint geoPointWithLatitude:bounds.southWest.latitude longitude:bounds.southWest.longitude];
+    PFGeoPoint* northEast = [PFGeoPoint geoPointWithLatitude:bounds.northEast.latitude longitude:bounds.northEast.longitude];
+    [markerQuery whereKey:@"location" withinGeoBoxFromSouthwest:southWest toNortheast:northEast];
+    [markerQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError* error){
+        if(error != nil){
+            NSLog(@"Failed to find objects.");
+        }else{
+            if(objects.count == 0){
+                return;
+            }
+            MapManager *mapManager = [MapManager sharedManager];
+            NSArray* markers = [mapManager createMarkersWithEvents:objects];
+            for(GMSMarker *marker in markers){
+                marker.map = self.mapView;
+            }
         }
     }];
 }

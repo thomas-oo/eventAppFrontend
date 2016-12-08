@@ -29,4 +29,12 @@ static MapManager* _sharedMapManager = nil;
     marker.snippet = event.host;
     return marker;
 }
+
+- (NSArray*)createMarkersWithEvents:(NSArray*) events{
+    NSMutableArray* markers = [[NSMutableArray alloc]init];
+    for(Event *event in events){
+        [markers addObject:[self createMarkerWithEvent:event]];
+    }
+    return markers;
+}
 @end

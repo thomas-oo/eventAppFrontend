@@ -19,7 +19,7 @@ NSMutableSet* oldLoadedEvents;
         return _sharedMapManager;
     }
 }
-//marker is not placed on any map yet.
+//marker is not placed on any map yet but is saved in the backend
 - (GMSMarker*)createMarkerWithEvent:(Event*) event{
     double latitude = event.location.latitude;
     double longitude = event.location.longitude;
@@ -28,6 +28,8 @@ NSMutableSet* oldLoadedEvents;
     marker.title = event.name;
     PFUser *currentUser = [PFUser currentUser];
     marker.snippet = event.host;
+    marker.appearAnimation  = kGMSMarkerAnimationPop;
+    marker.icon = [UIImage imageNamed:@"Party"];
     return marker;
 }
 

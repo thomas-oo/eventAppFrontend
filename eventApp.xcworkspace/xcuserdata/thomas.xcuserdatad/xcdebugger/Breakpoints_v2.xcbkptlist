@@ -10,12 +10,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "eventApp/MapViewController.m"
-            timestampString = "502773362.794316"
+            timestampString = "502861427.611763"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "-mapView:idleAtCameraPosition:"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-addEventButtonClicked:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "eventApp/MapViewController.m"
+            timestampString = "502861524.887418"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "-doneButtonClicked:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

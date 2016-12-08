@@ -1,6 +1,8 @@
 #import "MapViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import <GooglePlaces/GooglePlaces.h>
+#import "Event.h"
+#import "MapManager.h"
 
 @interface MapViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *marker;
@@ -11,7 +13,10 @@
 @end
 
 @implementation MapViewController
+
 BOOL firstLocationUpdate;
+GMSCameraPosition* currentPosition;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -45,18 +50,7 @@ BOOL firstLocationUpdate;
     if(!_marker.hidden){
         [_doneButton setHidden:NO];
         [_addressLabel setHidden:NO];
-        CLLocationCoordinate2D currentCoordinates = [position target];
-        
-        GMSGeocoder *geocoder = [[GMSGeocoder alloc]init];
-        [geocoder reverseGeocodeCoordinate:currentCoordinates completionHandler:^(GMSReverseGeocodeResponse* geocodeResponse,NSError*error){
-            if(error != nil){
-                NSLog(@"Error grabbing reverse geocode");
-            }else{
-                NSArray *addresslines = geocodeResponse.firstResult.lines;
-                NSMutableString* address = addresslines[0];
-                _addressLabel.text = address;
-            }
-        }];
+        [self displayAddressHere:position];
     }
 }
 
@@ -76,6 +70,8 @@ BOOL firstLocationUpdate;
     [_cancel setHidden:NO];
     [_doneButton setHidden:NO];
     [_addressLabel setHidden:NO];
+    GMSCameraPosition* position = [self.mapView camera];
+    [self displayAddressHere:position];
 }
 - (IBAction)cancelButtonClicked:(id)sender {
     [_addButton setHidden:NO];
@@ -84,6 +80,43 @@ BOOL firstLocationUpdate;
     [_doneButton setHidden:YES];
     [_addressLabel setHidden:YES];
     _addressLabel.text = @"";
+}
+- (IBAction)doneButtonClicked:(id)sender {
+    NSString* name = @"Party";
+    NSString* host = @"Thomas Oo";
+    NSDate* startTime = [[NSDate alloc] init];
+    NSDate* endTime = [[NSDate alloc] init];
+    CLLocationCoordinate2D currentCoordinates = [currentPosition target];
+    PFGeoPoint* location = [PFGeoPoint geoPointWithLatitude:currentCoordinates.latitude longitude:currentCoordinates.longitude];
+    NSNumber* price = @20;
+    
+    Event* newEvent = [[Event alloc] initEventWithName:name Host:host StartTime:startTime EndTime:endTime Location:location Price:price];
+    
+    [newEvent saveInBackgroundWithBlock:^(BOOL success, NSError* error){
+        if(success){
+            //create marker
+            MapManager* mapManager = [MapManager sharedManager];
+            GMSMarker* marker = [mapManager createMarkerWithEvent:newEvent];
+            marker.map = [self mapView];
+        }else{
+            NSLog(@"Failed to save event.");
+        }
+    }];
+}
+
+- (void)displayAddressHere:(GMSCameraPosition*)position{
+    currentPosition = position;
+    CLLocationCoordinate2D currentCoordinates = [position target];
+    GMSGeocoder *geocoder = [[GMSGeocoder alloc]init];
+    [geocoder reverseGeocodeCoordinate:currentCoordinates completionHandler:^(GMSReverseGeocodeResponse* geocodeResponse,NSError*error){
+        if(error != nil){
+            NSLog(@"Error grabbing reverse geocode");
+        }else{
+            NSArray *addresslines = geocodeResponse.firstResult.lines;
+            NSMutableString* address = addresslines[0];
+            _addressLabel.text = address;
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

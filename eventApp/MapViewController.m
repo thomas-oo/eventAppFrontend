@@ -12,6 +12,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *addressLabel;
 @end
 
+//TODO: clean up observers on view destroy
 @implementation MapViewController
 
 BOOL firstLocationUpdate;
@@ -46,6 +47,7 @@ GMSCameraPosition* currentPosition;
     }
     self.mapView.mapStyle = style;
     self.mapView.delegate = self;
+    [self registerListenerForLoadedEvents];
 }
 
 -(void)mapView:(GMSMapView *)mapView idleAtCameraPosition:(nonnull GMSCameraPosition *)position{
@@ -124,24 +126,14 @@ GMSCameraPosition* currentPosition;
 
 - (void)loadMarkers{
     GMSCoordinateBounds *bounds = [[GMSCoordinateBounds alloc]initWithRegion:self.mapView.projection.visibleRegion];
-    PFQuery* markerQuery = [[PFQuery alloc] initWithClassName:@"Event"];
-    PFGeoPoint* southWest = [PFGeoPoint geoPointWithLatitude:bounds.southWest.latitude longitude:bounds.southWest.longitude];
-    PFGeoPoint* northEast = [PFGeoPoint geoPointWithLatitude:bounds.northEast.latitude longitude:bounds.northEast.longitude];
-    [markerQuery whereKey:@"location" withinGeoBoxFromSouthwest:southWest toNortheast:northEast];
-    [markerQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError* error){
-        if(error != nil){
-            NSLog(@"Failed to find objects.");
-        }else{
-            if(objects.count == 0){
-                return;
-            }
-            MapManager *mapManager = [MapManager sharedManager];
-            NSArray* markers = [mapManager createMarkersWithEvents:objects];
-            for(GMSMarker *marker in markers){
-                marker.map = self.mapView;
-            }
-        }
-    }];
+    MapManager *mapManager = [MapManager sharedManager];
+    [mapManager queryForEventsWithinGeoBox:bounds];
+    
+    
+//    NSArray* markers = [mapManager createMarkersWithEvents:objects];
+//    for(GMSMarker *marker in markers){
+//        marker.map = self.mapView;
+//    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -153,7 +145,7 @@ GMSCameraPosition* currentPosition;
                       ofObject:(id)object
                         change:(NSDictionary *)change
                        context:(void *)context {
-    if (!firstLocationUpdate) {
+    if ([keyPath isEqualToString:@"myLocation"] && !firstLocationUpdate) {
         // If the first location update has not yet been recieved, then jump to that
         // location.
         firstLocationUpdate = YES;
@@ -161,7 +153,15 @@ GMSCameraPosition* currentPosition;
         self.mapView.camera = [GMSCameraPosition cameraWithTarget:location.coordinate
                                                          zoom:15];
         [self.mapView removeObserver:self forKeyPath:@"myLocation"];
+    }else if([keyPath isEqualToString:@"loadedEvents"]){
+        NSLog(@"LoadedEvents has changed");
     }
+}
+
+- (void)registerListenerForLoadedEvents{
+    MapManager* mapManager = [MapManager sharedManager];
+    [mapManager addObserver:self forKeyPath:@"loadedEvents" options:NSKeyValueObservingOptionNew context:nil];
+    
 }
 /*
 #pragma mark - Navigation

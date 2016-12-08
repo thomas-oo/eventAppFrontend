@@ -1,11 +1,11 @@
 #import "MapManager.h"
 @implementation MapManager
 static MapManager* _sharedMapManager = nil;
-
+@synthesize loadedEvents;
 - (id)initPrivate{
     if (!_sharedMapManager) {
         _sharedMapManager = [super init];
-        
+        loadedEvents = [[NSMutableSet alloc]init];
     }
     return _sharedMapManager;
 }
@@ -36,5 +36,32 @@ static MapManager* _sharedMapManager = nil;
         [markers addObject:[self createMarkerWithEvent:event]];
     }
     return markers;
+}
+
+- (void)queryForEventsWithinGeoBox:(GMSCoordinateBounds*)bounds{
+    bool __block changedLoadedEvents = NO;
+    PFQuery* markerQuery = [[PFQuery alloc] initWithClassName:@"Event"];
+    PFGeoPoint* southWest = [PFGeoPoint geoPointWithLatitude:bounds.southWest.latitude longitude:bounds.southWest.longitude];
+    PFGeoPoint* northEast = [PFGeoPoint geoPointWithLatitude:bounds.northEast.latitude longitude:bounds.northEast.longitude];
+    [markerQuery whereKey:@"location" withinGeoBoxFromSouthwest:southWest toNortheast:northEast];
+    [markerQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError* error){
+        if(error != nil){
+            NSLog(@"Failed to find objects.");
+        }else{
+            if(objects.count == 0){
+            }else{
+                for (Event *event in objects) {
+                    if(![loadedEvents containsObject:event]){
+                        [self willChangeValueForKey:@"loadedEvents"];
+                        [loadedEvents addObject:event];
+                        changedLoadedEvents = YES;
+                    }
+                }
+                if(changedLoadedEvents){
+                    [self didChangeValueForKey:@"loadedEvents"];
+                }
+            }
+        }
+    }];
 }
 @end

@@ -11,5 +11,5 @@
 
 @interface MapViewController : UIViewController<GMSMapViewDelegate>
 @property (strong, nonatomic) IBOutlet GMSMapView *mapView;
-
+@property NSMutableSet *markedEvents;
 @end

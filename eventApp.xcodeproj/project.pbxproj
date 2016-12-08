@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		7AC930A95B7FB159B000999E /* libPods-eventApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5982F00E521E6C0A50226C /* libPods-eventApp.a */; };
 		BCAFB2537805DE0363E12437 /* libPods-eventAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E3A6C9B00FF2A9F943082D /* libPods-eventAppTests.a */; };
+		E9103CF21DF8D03B00FDE568 /* ParseController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9103CF11DF8D03B00FDE568 /* ParseController.m */; };
+		E9103CF71DF8DC6600FDE568 /* ParseManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9103CF61DF8DC6600FDE568 /* ParseManagerTest.m */; };
+		E9103CFA1DF8EDF500FDE568 /* MapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E9103CF91DF8EDF500FDE568 /* MapManager.m */; };
 		E914B8731DF5317B00D55EE9 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E914B8721DF5317B00D55EE9 /* LogInViewController.m */; };
 		E914B8761DF5505600D55EE9 /* SanFranciscoText-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E914B8751DF54F1C00D55EE9 /* SanFranciscoText-Light.ttf */; };
 		E914B8781DF6304200D55EE9 /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = E914B8771DF6304200D55EE9 /* style.json */; };
@@ -51,6 +54,11 @@
 		78E3A6C9B00FF2A9F943082D /* libPods-eventAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-eventAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EA7B8E5537F6EE8F8DF0749 /* Pods-eventAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eventAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-eventAppTests/Pods-eventAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		DB06548DC021599EE97C9AF8 /* Pods-eventApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eventApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-eventApp/Pods-eventApp.release.xcconfig"; sourceTree = "<group>"; };
+		E9103CF01DF8D03B00FDE568 /* ParseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseController.h; sourceTree = "<group>"; };
+		E9103CF11DF8D03B00FDE568 /* ParseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseController.m; sourceTree = "<group>"; };
+		E9103CF61DF8DC6600FDE568 /* ParseManagerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseManagerTest.m; sourceTree = "<group>"; };
+		E9103CF81DF8EDF500FDE568 /* MapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapManager.h; sourceTree = "<group>"; };
+		E9103CF91DF8EDF500FDE568 /* MapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapManager.m; sourceTree = "<group>"; };
 		E914B8711DF5317B00D55EE9 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		E914B8721DF5317B00D55EE9 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		E914B8751DF54F1C00D55EE9 /* SanFranciscoText-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-Light.ttf"; sourceTree = "<group>"; };
@@ -185,6 +193,10 @@
 			children = (
 				FAB8DFA61DE39E2E0091B7B1 /* DTO */,
 				FAB8DF6A1DE386350091B7B1 /* main.m */,
+				E9103CF01DF8D03B00FDE568 /* ParseController.h */,
+				E9103CF11DF8D03B00FDE568 /* ParseController.m */,
+				E9103CF81DF8EDF500FDE568 /* MapManager.h */,
+				E9103CF91DF8EDF500FDE568 /* MapManager.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -193,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				FAB8DF851DE386360091B7B1 /* Info.plist */,
+				E9103CF61DF8DC6600FDE568 /* ParseManagerTest.m */,
 			);
 			path = eventAppTests;
 			sourceTree = "<group>";
@@ -461,9 +474,11 @@
 				FAB8DFA91DE39E6B0091B7B1 /* Event.m in Sources */,
 				E914B8731DF5317B00D55EE9 /* LogInViewController.m in Sources */,
 				FAA8C4541DED472600C3DD0E /* MapViewController.m in Sources */,
+				E9103CFA1DF8EDF500FDE568 /* MapManager.m in Sources */,
 				FAB8DF6E1DE386350091B7B1 /* AppDelegate.m in Sources */,
 				FAB8DF6B1DE386350091B7B1 /* main.m in Sources */,
 				E93C3CD31DF6A864006C9761 /* MainMenuViewController.m in Sources */,
+				E9103CF21DF8D03B00FDE568 /* ParseController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +486,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9103CF71DF8DC6600FDE568 /* ParseManagerTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

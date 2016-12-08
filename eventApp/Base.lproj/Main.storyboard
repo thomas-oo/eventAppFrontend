@@ -83,7 +83,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCS-EM-Va5">
-                                <rect key="frame" x="329" y="60" width="32" height="32"/>
+                                <rect key="frame" x="328.5" y="60" width="32" height="32"/>
                                 <state key="normal" image="Cancel"/>
                                 <connections>
                                     <action selector="cancelButtonClicked:" destination="8WM-Eo-veR" eventType="touchUpInside" id="nr7-Og-9V0"/>
@@ -96,9 +96,12 @@
                                 <state key="normal" title="Done">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="doneButtonClicked:" destination="8WM-Eo-veR" eventType="touchUpInside" id="3Wh-sn-YG4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L8Q-qY-roF">
-                                <rect key="frame" x="329" y="60" width="32" height="32"/>
+                                <rect key="frame" x="328.5" y="60" width="32" height="32"/>
                                 <state key="normal" image="Add"/>
                                 <connections>
                                     <action selector="addEventButtonClicked:" destination="8WM-Eo-veR" eventType="touchUpInside" id="Ju6-ae-8ar"/>

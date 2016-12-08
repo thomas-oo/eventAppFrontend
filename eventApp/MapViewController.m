@@ -1,6 +1,8 @@
 #import "MapViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import <GooglePlaces/GooglePlaces.h>
+#import "Event.h"
+#import "MapManager.h"
 
 @interface MapViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *marker;
@@ -10,8 +12,12 @@
 @property (strong, nonatomic) IBOutlet UILabel *addressLabel;
 @end
 
+//TODO: clean up observers on view destroy
 @implementation MapViewController
+@synthesize markedEvents;
 BOOL firstLocationUpdate;
+GMSCameraPosition* currentPosition;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -22,6 +28,8 @@ BOOL firstLocationUpdate;
     self.mapView.myLocationEnabled = YES;
     self.mapView.settings.compassButton = YES;
     self.mapView.settings.myLocationButton = YES;
+    self.mapView.settings.rotateGestures = NO;
+    self.mapView.settings.tiltGestures = NO;
     [self.mapView setMinZoom:10 maxZoom:20];
     
     [self.mapView addObserver:self
@@ -39,24 +47,15 @@ BOOL firstLocationUpdate;
     }
     self.mapView.mapStyle = style;
     self.mapView.delegate = self;
+    [self registerListenerForLoadedEvents];
 }
 
 -(void)mapView:(GMSMapView *)mapView idleAtCameraPosition:(nonnull GMSCameraPosition *)position{
+    [self loadMarkers];
     if(!_marker.hidden){
         [_doneButton setHidden:NO];
         [_addressLabel setHidden:NO];
-        CLLocationCoordinate2D currentCoordinates = [position target];
-        
-        GMSGeocoder *geocoder = [[GMSGeocoder alloc]init];
-        [geocoder reverseGeocodeCoordinate:currentCoordinates completionHandler:^(GMSReverseGeocodeResponse* geocodeResponse,NSError*error){
-            if(error != nil){
-                NSLog(@"Error grabbing reverse geocode");
-            }else{
-                NSArray *addresslines = geocodeResponse.firstResult.lines;
-                NSMutableString* address = addresslines[0];
-                _addressLabel.text = address;
-            }
-        }];
+        [self displayAddressHere:position];
     }
 }
 
@@ -76,6 +75,8 @@ BOOL firstLocationUpdate;
     [_cancel setHidden:NO];
     [_doneButton setHidden:NO];
     [_addressLabel setHidden:NO];
+    GMSCameraPosition* position = [self.mapView camera];
+    [self displayAddressHere:position];
 }
 - (IBAction)cancelButtonClicked:(id)sender {
     [_addButton setHidden:NO];
@@ -84,6 +85,55 @@ BOOL firstLocationUpdate;
     [_doneButton setHidden:YES];
     [_addressLabel setHidden:YES];
     _addressLabel.text = @"";
+}
+- (IBAction)doneButtonClicked:(id)sender {
+    NSString* name = @"Party";
+    NSString* host = @"Thomas Oo";
+    NSDate* startTime = [[NSDate alloc] init];
+    NSDate* endTime = [[NSDate alloc] init];
+    CLLocationCoordinate2D currentCoordinates = [currentPosition target];
+    PFGeoPoint* location = [PFGeoPoint geoPointWithLatitude:currentCoordinates.latitude longitude:currentCoordinates.longitude];
+    NSNumber* price = @20;
+    
+    Event* newEvent = [[Event alloc] initEventWithName:name Host:host StartTime:startTime EndTime:endTime Location:location Price:price];
+    
+    [newEvent saveInBackgroundWithBlock:^(BOOL success, NSError* error){
+        if(success){
+            //create marker
+            MapManager* mapManager = [MapManager sharedManager];
+            GMSMarker* marker = [mapManager createMarkerWithEvent:newEvent];
+            marker.map = [self mapView];
+        }else{
+            NSLog(@"Failed to save event.");
+        }
+    }];
+}
+
+- (void)displayAddressHere:(GMSCameraPosition*)position{
+    currentPosition = position;
+    CLLocationCoordinate2D currentCoordinates = [position target];
+    GMSGeocoder *geocoder = [[GMSGeocoder alloc]init];
+    [geocoder reverseGeocodeCoordinate:currentCoordinates completionHandler:^(GMSReverseGeocodeResponse* geocodeResponse,NSError*error){
+        if(error != nil){
+            NSLog(@"Error grabbing reverse geocode");
+        }else{
+            NSArray *addresslines = geocodeResponse.firstResult.lines;
+            NSMutableString* address = addresslines[0];
+            _addressLabel.text = address;
+        }
+    }];
+}
+
+- (void)loadMarkers{
+    GMSCoordinateBounds *bounds = [[GMSCoordinateBounds alloc]initWithRegion:self.mapView.projection.visibleRegion];
+    MapManager *mapManager = [MapManager sharedManager];
+    [mapManager queryForEventsWithinGeoBox:bounds];
+    
+    
+//    NSArray* markers = [mapManager createMarkersWithEvents:objects];
+//    for(GMSMarker *marker in markers){
+//        marker.map = self.mapView;
+//    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -95,7 +145,7 @@ BOOL firstLocationUpdate;
                       ofObject:(id)object
                         change:(NSDictionary *)change
                        context:(void *)context {
-    if (!firstLocationUpdate) {
+    if ([keyPath isEqualToString:@"myLocation"] && !firstLocationUpdate) {
         // If the first location update has not yet been recieved, then jump to that
         // location.
         firstLocationUpdate = YES;
@@ -103,7 +153,19 @@ BOOL firstLocationUpdate;
         self.mapView.camera = [GMSCameraPosition cameraWithTarget:location.coordinate
                                                          zoom:15];
         [self.mapView removeObserver:self forKeyPath:@"myLocation"];
+    }else if([keyPath isEqualToString:@"loadedEvents"]){
+        //load markers
+        NSMutableArray* events = [change objectForKey:NSKeyValueChangeNewKey];
+        NSSet* newMarkers = [[MapManager sharedManager] getNewMarkers];
+        for(GMSMarker *marker in newMarkers){
+            marker.map = self.mapView;
+        }
     }
+}
+
+- (void)registerListenerForLoadedEvents{
+    MapManager* mapManager = [MapManager sharedManager];
+    [mapManager addObserver:self forKeyPath:@"loadedEvents" options:NSKeyValueObservingOptionNew context:nil];
 }
 /*
 #pragma mark - Navigation

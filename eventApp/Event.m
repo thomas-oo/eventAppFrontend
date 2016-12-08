@@ -29,6 +29,7 @@
         self.endTime = endTime;
         self.location = location;
         self.price = price;
+        [self setValue:[PFUser currentUser] forKey:@"Creator"];
     }
     return self;
 }

@@ -2,6 +2,7 @@
 @implementation MapManager
 static MapManager* _sharedMapManager = nil;
 @synthesize loadedEvents;
+NSMutableSet* oldLoadedEvents;
 - (id)initPrivate{
     if (!_sharedMapManager) {
         _sharedMapManager = [super init];
@@ -30,12 +31,18 @@ static MapManager* _sharedMapManager = nil;
     return marker;
 }
 
-- (NSArray*)createMarkersWithEvents:(NSArray*) events{
-    NSMutableArray* markers = [[NSMutableArray alloc]init];
+- (NSSet*)createMarkersWithEvents:(NSSet*) events{
+    NSMutableSet* markers = [[NSMutableSet alloc]init];
     for(Event *event in events){
         [markers addObject:[self createMarkerWithEvent:event]];
     }
     return markers;
+}
+
+- (NSSet*)getNewMarkers{
+    NSMutableSet* newEvents = [loadedEvents mutableCopy];
+    [newEvents minusSet:oldLoadedEvents];
+    return [self createMarkersWithEvents:newEvents];
 }
 
 - (void)queryForEventsWithinGeoBox:(GMSCoordinateBounds*)bounds{
@@ -44,6 +51,9 @@ static MapManager* _sharedMapManager = nil;
     PFGeoPoint* southWest = [PFGeoPoint geoPointWithLatitude:bounds.southWest.latitude longitude:bounds.southWest.longitude];
     PFGeoPoint* northEast = [PFGeoPoint geoPointWithLatitude:bounds.northEast.latitude longitude:bounds.northEast.longitude];
     [markerQuery whereKey:@"location" withinGeoBoxFromSouthwest:southWest toNortheast:northEast];
+    
+    oldLoadedEvents = [loadedEvents mutableCopy];
+    
     [markerQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError* error){
         if(error != nil){
             NSLog(@"Failed to find objects.");

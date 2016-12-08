@@ -8,7 +8,7 @@
 + (id)sharedManager;
 - (id)init NS_UNAVAILABLE;
 - (GMSMarker*)createMarkerWithEvent:(Event*) event;
-- (NSArray*)createMarkersWithEvents:(NSArray*) events;
+- (NSSet*)getNewMarkers;
 - (void)queryForEventsWithinGeoBox:(GMSCoordinateBounds*)bounds;
 
 @end

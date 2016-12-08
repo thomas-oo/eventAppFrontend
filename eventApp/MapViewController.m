@@ -156,8 +156,8 @@ GMSCameraPosition* currentPosition;
     }else if([keyPath isEqualToString:@"loadedEvents"]){
         //load markers
         NSMutableArray* events = [change objectForKey:NSKeyValueChangeNewKey];
-        NSArray* markers = [[MapManager sharedManager] createMarkersWithEvents:events];
-        for(GMSMarker *marker in markers){
+        NSSet* newMarkers = [[MapManager sharedManager] getNewMarkers];
+        for(GMSMarker *marker in newMarkers){
             marker.map = self.mapView;
         }
     }

@@ -14,7 +14,7 @@
 
 //TODO: clean up observers on view destroy
 @implementation MapViewController
-
+@synthesize markedEvents;
 BOOL firstLocationUpdate;
 GMSCameraPosition* currentPosition;
 
@@ -154,14 +154,18 @@ GMSCameraPosition* currentPosition;
                                                          zoom:15];
         [self.mapView removeObserver:self forKeyPath:@"myLocation"];
     }else if([keyPath isEqualToString:@"loadedEvents"]){
-        NSLog(@"LoadedEvents has changed");
+        //load markers
+        NSMutableArray* events = [change objectForKey:NSKeyValueChangeNewKey];
+        NSArray* markers = [[MapManager sharedManager] createMarkersWithEvents:events];
+        for(GMSMarker *marker in markers){
+            marker.map = self.mapView;
+        }
     }
 }
 
 - (void)registerListenerForLoadedEvents{
     MapManager* mapManager = [MapManager sharedManager];
     [mapManager addObserver:self forKeyPath:@"loadedEvents" options:NSKeyValueObservingOptionNew context:nil];
-    
 }
 /*
 #pragma mark - Navigation

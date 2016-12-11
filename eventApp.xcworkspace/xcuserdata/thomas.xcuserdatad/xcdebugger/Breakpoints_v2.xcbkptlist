@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "eventApp/MapViewController.m"
-            timestampString = "502919871.490721"
+            filePath = "eventApp/MapManager.m"
+            timestampString = "503102212.582509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
-            landmarkName = "-observeValueForKeyPath:ofObject:change:context:"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "-queryForEventsWithinGeoBox:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

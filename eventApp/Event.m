@@ -11,6 +11,8 @@
 @dynamic price;
 @dynamic image;
 
+GMSMarker* eventMarker;
+
 + (void)load{
     [self registerSubclass];
 }
@@ -34,6 +36,12 @@
     return self;
 }
 
-
+- (GMSMarker*)getMarker{
+    if(eventMarker == nil){
+        CLLocationCoordinate2D coordinate =CLLocationCoordinate2DMake(self.location.latitude, self.location.longitude);
+        eventMarker = [GMSMarker markerWithPosition:coordinate];
+    }
+    return eventMarker;
+}
 
 @end

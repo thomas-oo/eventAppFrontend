@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
-
+#import <GoogleMaps/GoogleMaps.h>
 @interface Event : PFObject<PFSubclassing>
 
 @property NSString* name;
@@ -16,6 +16,6 @@
 - (id)init NS_UNAVAILABLE;
 - (id)initWithClassName:(NSString *)newClassName NS_UNAVAILABLE;
 - (id)initEventWithName:(NSString*)name Host:(NSString*)host StartTime:(NSDate*)startTime EndTime:(NSDate*)endTime Location:(PFGeoPoint*)location Price:(NSNumber*)price;
-
+- (GMSMarker*)getMarker;
 
 @end

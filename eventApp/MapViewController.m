@@ -2,8 +2,7 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import <GooglePlaces/GooglePlaces.h>
 #import "Event.h"
-#import "MapManager.h"
-
+#import "EventBusiness.h"
 @interface MapViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *marker;
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
@@ -17,9 +16,12 @@
 @synthesize markedEvents;
 BOOL firstLocationUpdate;
 GMSCameraPosition* currentPosition;
-
+ParseClient *parseClient;
+EventBusiness* eventBusiness;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    parseClient = [[ParseClient alloc] init];
+    eventBusiness = [[EventBusiness alloc] initWithParseClient:parseClient];
     // Do any additional setup after loading the view.
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:100
                                                             longitude:100
@@ -99,10 +101,8 @@ GMSCameraPosition* currentPosition;
     
     [newEvent saveInBackgroundWithBlock:^(BOOL success, NSError* error){
         if(success){
-            //create marker
-            MapManager* mapManager = [MapManager sharedManager];
-            GMSMarker* marker = [mapManager createMarkerWithEvent:newEvent];
-            marker.map = [self mapView];
+            //place marker
+            [newEvent getMarker].map = self.mapView;
         }else{
             NSLog(@"Failed to save event.");
         }
@@ -125,20 +125,7 @@ GMSCameraPosition* currentPosition;
 }
 
 - (void)loadMarkers{
-    GMSCoordinateBounds *bounds = [[GMSCoordinateBounds alloc]initWithRegion:self.mapView.projection.visibleRegion];
-    MapManager *mapManager = [MapManager sharedManager];
-    [mapManager queryForEventsWithinGeoBox:bounds];
-    
-    
-//    NSArray* markers = [mapManager createMarkersWithEvents:objects];
-//    for(GMSMarker *marker in markers){
-//        marker.map = self.mapView;
-//    }
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [eventBusiness updateEventsForMapView:self.mapView];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -155,17 +142,20 @@ GMSCameraPosition* currentPosition;
         [self.mapView removeObserver:self forKeyPath:@"myLocation"];
     }else if([keyPath isEqualToString:@"loadedEvents"]){
         //load markers
-        NSMutableArray* events = [change objectForKey:NSKeyValueChangeNewKey];
-        NSSet* newMarkers = [[MapManager sharedManager] getNewMarkers];
-        for(GMSMarker *marker in newMarkers){
+        NSMutableSet* events = [change objectForKey:NSKeyValueChangeNewKey];
+        [self.mapView clear];
+        for(Event *event in events){
+            GMSMarker* marker = [event getMarker];
             marker.map = self.mapView;
+            marker.title = event.name;
+            marker.snippet = event.host;
+            marker.icon = [UIImage imageNamed:@"Party"];
         }
     }
 }
 
 - (void)registerListenerForLoadedEvents{
-    MapManager* mapManager = [MapManager sharedManager];
-    [mapManager addObserver:self forKeyPath:@"loadedEvents" options:NSKeyValueObservingOptionNew context:nil];
+    [eventBusiness addObserver:self forKeyPath:@"loadedEvents" options:NSKeyValueObservingOptionNew context:nil];
 }
 /*
 #pragma mark - Navigation

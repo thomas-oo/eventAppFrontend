@@ -5,6 +5,10 @@
 @synthesize loadedEvents;
 ParseClient* _parseClient;
 
++ (BOOL)automaticallyNotifiesObserversOfLoadedEvents{
+    return YES;
+}
+
 -(id)initWithParseClient:(ParseClient*)parseClient{
     self = [super init];
     if(self) {
@@ -31,9 +35,13 @@ ParseClient* _parseClient;
             //nothing
         }else{
             //replace events in loadedEvents from loadedVisibleEvents with the ones in objects.
+//            [self willChangeValueForKey:@"loadedEvents"];
+//            [loadedEvents minusSet:loadedVisibleEvents];
+//            [loadedEvents unionSet:visibleEvents];
+//            [self didChangeValueForKey:@"loadedEvents"];
             [self willChangeValueForKey:@"loadedEvents"];
             [loadedEvents minusSet:loadedVisibleEvents];
-            [loadedEvents unionSet:visibleEvents];
+            loadedEvents = [[loadedEvents setByAddingObjectsFromSet:visibleEvents] mutableCopy];
             [self didChangeValueForKey:@"loadedEvents"];
         }
     }];

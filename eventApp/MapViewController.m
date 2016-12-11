@@ -143,6 +143,7 @@ EventBusiness* eventBusiness;
     }else if([keyPath isEqualToString:@"loadedEvents"]){
         //load markers
         NSMutableSet* events = [change objectForKey:NSKeyValueChangeNewKey];
+        NSMutableSet* oldEvents = [change objectForKey: NSKeyValueChangeOldKey];
         [self.mapView clear];
         for(Event *event in events){
             GMSMarker* marker = [event getMarker];
@@ -155,7 +156,7 @@ EventBusiness* eventBusiness;
 }
 
 - (void)registerListenerForLoadedEvents{
-    [eventBusiness addObserver:self forKeyPath:@"loadedEvents" options:NSKeyValueObservingOptionNew context:nil];
+    [eventBusiness addObserver:self forKeyPath:@"loadedEvents" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
 }
 /*
 #pragma mark - Navigation

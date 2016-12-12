@@ -1,6 +1,8 @@
 #import "Event.h"
 
-@implementation Event
+@implementation Event{
+    GMSMarker* eventMarker;
+}
 
 @dynamic name;
 @dynamic host;
@@ -10,8 +12,6 @@
 @dynamic location;
 @dynamic price;
 @dynamic image;
-
-GMSMarker* eventMarker;
 
 + (void)load{
     [self registerSubclass];

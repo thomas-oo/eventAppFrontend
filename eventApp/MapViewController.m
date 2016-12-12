@@ -101,8 +101,7 @@ EventBusiness* eventBusiness;
     
     [newEvent saveInBackgroundWithBlock:^(BOOL success, NSError* error){
         if(success){
-            //place marker
-            [newEvent getMarker].map = self.mapView;
+            [self loadMarkers];
         }else{
             NSLog(@"Failed to save event.");
         }
@@ -155,7 +154,7 @@ EventBusiness* eventBusiness;
 }
 
 - (void)registerListenerForLoadedEvents{
-    [eventBusiness addObserver:self forKeyPath:@"loadedEvents" options:NSKeyValueObservingOptionNew context:nil];
+    [eventBusiness addObserver:self forKeyPath:@"loadedEvents" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
 }
 /*
 #pragma mark - Navigation

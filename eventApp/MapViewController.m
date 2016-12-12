@@ -3,6 +3,7 @@
 #import <GooglePlaces/GooglePlaces.h>
 #import "Event.h"
 #import "EventBusiness.h"
+#import "InfoWindow.h"
 @interface MapViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *marker;
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
@@ -149,6 +150,7 @@ EventBusiness* eventBusiness;
             marker.title = event.name;
             marker.snippet = event.host;
             marker.icon = [UIImage imageNamed:@"Party"];
+            marker.infoWindowAnchor= CGPointMake(0.5, 0.85);
         }
     }
 }
@@ -156,14 +158,10 @@ EventBusiness* eventBusiness;
 - (void)registerListenerForLoadedEvents{
     [eventBusiness addObserver:self forKeyPath:@"loadedEvents" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(UIView*)mapView:(GMSMapView *)mapView markerInfoWindow:(GMSMarker *)marker{
+    InfoWindow *infoWindow = [[[NSBundle mainBundle] loadNibNamed:@"InfoWindow" owner:self options:nil] objectAtIndex:0];
+    return infoWindow;
 }
-*/
 
 @end

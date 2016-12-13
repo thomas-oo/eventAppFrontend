@@ -1,14 +1,11 @@
 #import "Event.h"
 
-<<<<<<< HEAD
-=======
 @interface Event()
 
 @property PFFile *imageFile;
 
 @end
 
->>>>>>> master
 @implementation Event{
     GMSMarker* eventMarker;
 }
@@ -20,12 +17,8 @@
 @dynamic endTime;
 @dynamic location;
 @dynamic price;
-<<<<<<< HEAD
-@dynamic image;
-=======
 @dynamic imageFile;
 @synthesize image = _image;
->>>>>>> master
 
 + (void)load{
     [self registerSubclass];

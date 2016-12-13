@@ -141,14 +141,8 @@ EventBusiness* eventBusiness;
                                                          zoom:15];
         [self.mapView removeObserver:self forKeyPath:@"myLocation"];
     }else if([keyPath isEqualToString:@"loadedEvents"]){
-<<<<<<< HEAD
-        //load markers
-        NSMutableSet* addedEvents = [change objectForKey:NSKeyValueChangeNewKey];
-        NSMutableSet* deletedEvents = [change objectForKey: NSKeyValueChangeOldKey];
-=======
         NSMutableSet* addedEvents = [change objectForKey:NSKeyValueChangeNewKey];
         NSMutableSet* deletedEvents = [change objectForKey:NSKeyValueChangeOldKey];
->>>>>>> master
         for(Event *event in addedEvents){
             GMSMarker* marker = [event getMarker];
             marker.map = self.mapView;

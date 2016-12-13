@@ -90,15 +90,15 @@ EventBusiness* eventBusiness;
     _addressLabel.text = @"";
 }
 - (IBAction)doneButtonClicked:(id)sender {
-    NSString* name = @"Party";
+    NSString* name = @"Samosa";
     NSString* host = @"Thomas Oo";
     NSDate* startTime = [[NSDate alloc] init];
     NSDate* endTime = [[NSDate alloc] init];
     CLLocationCoordinate2D currentCoordinates = [currentPosition target];
     PFGeoPoint* location = [PFGeoPoint geoPointWithLatitude:currentCoordinates.latitude longitude:currentCoordinates.longitude];
     NSNumber* price = @20;
-    
-    Event* newEvent = [[Event alloc] initEventWithName:name Host:host StartTime:startTime EndTime:endTime Location:location Price:price];
+    UIImage* image = [UIImage imageNamed:@"samosa"];
+    Event* newEvent = [[Event alloc] initEventWithName:name Host:host StartTime:startTime EndTime:endTime Location:location Price:price Image:image];
     
     [newEvent saveInBackgroundWithBlock:^(BOOL success, NSError* error){
         if(success){
@@ -148,14 +148,12 @@ EventBusiness* eventBusiness;
             marker.map = self.mapView;
             marker.title = event.name;
             marker.snippet = event.host;
-            marker.icon = [UIImage imageNamed:@"Party"];
         }
         for(Event* event in deletedEvents){
             GMSMarker* marker = [event getMarker];
             marker.map = nil;
             marker.title = nil;
             marker.snippet = nil;
-            marker.icon = nil;
         }
     }
 }
@@ -166,6 +164,23 @@ EventBusiness* eventBusiness;
 
 -(UIView*)mapView:(GMSMapView *)mapView markerInfoWindow:(GMSMarker *)marker{
     InfoWindow *infoWindow = [[[NSBundle mainBundle] loadNibNamed:@"InfoWindow" owner:self options:nil] objectAtIndex:0];
+    Event* eventOfMarker;
+    
+    //search for the owner of this marker
+    for(Event* event in eventBusiness.loadedEvents){
+        if(event.getMarker == marker){
+            eventOfMarker = event;
+        }else{ //if marker isn't found, remove it (this is as we do not reload events right before this method is called
+            marker.map = nil;
+            marker.title = nil;
+            marker.snippet = nil;
+            return nil;
+        }
+    }
+    //able to access the event that owns this marker
+    [infoWindow.title setText:eventOfMarker.name];
+    [infoWindow.snippet setText:eventOfMarker.host];
+    [infoWindow.image setImage: eventOfMarker.image];
     return infoWindow;
 }
 

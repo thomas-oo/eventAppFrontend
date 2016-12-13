@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface InfoWindow : UIView
+@property (strong, nonatomic) IBOutlet UILabel *title;
+@property (strong, nonatomic) IBOutlet UILabel *snippet;
+@property (strong, nonatomic) IBOutlet UIImageView *image;
+@property (strong, nonatomic) IBOutlet UILabel *startDate;
+@property (strong, nonatomic) IBOutlet UILabel *endDate;
 
 @end

@@ -31,10 +31,10 @@ ParseClient* _parseClient;
             //nothing
         }else{
             //replace events in loadedEvents from loadedVisibleEvents with the ones in objects.
-            [self willChangeValueForKey:@"loadedEvents"];
+            [self willChangeValueForKey:@"loadedEvents" withSetMutation:NSKeyValueSetSetMutation usingObjects:visibleEvents];
             [loadedEvents minusSet:loadedVisibleEvents];
             [loadedEvents unionSet:visibleEvents];
-            [self didChangeValueForKey:@"loadedEvents"];
+            [self didChangeValueForKey:@"loadedEvents" withSetMutation:NSKeyValueSetSetMutation usingObjects:visibleEvents];
         }
     }];
 }

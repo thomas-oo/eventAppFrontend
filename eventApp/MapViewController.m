@@ -141,16 +141,21 @@ EventBusiness* eventBusiness;
                                                          zoom:15];
         [self.mapView removeObserver:self forKeyPath:@"myLocation"];
     }else if([keyPath isEqualToString:@"loadedEvents"]){
-        //load markers
-        NSMutableSet* events = [change objectForKey:NSKeyValueChangeNewKey];
-        [self.mapView clear];
-        for(Event *event in events){
+        NSMutableSet* addedEvents = [change objectForKey:NSKeyValueChangeNewKey];
+        NSMutableSet* deletedEvents = [change objectForKey:NSKeyValueChangeOldKey];
+        for(Event *event in addedEvents){
             GMSMarker* marker = [event getMarker];
             marker.map = self.mapView;
             marker.title = event.name;
             marker.snippet = event.host;
             marker.icon = [UIImage imageNamed:@"Party"];
-            marker.infoWindowAnchor= CGPointMake(0.5, 0.85);
+        }
+        for(Event* event in deletedEvents){
+            GMSMarker* marker = [event getMarker];
+            marker.map = nil;
+            marker.title = nil;
+            marker.snippet = nil;
+            marker.icon = nil;
         }
     }
 }

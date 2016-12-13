@@ -39,10 +39,10 @@ ParseClient* _parseClient;
 //            [loadedEvents minusSet:loadedVisibleEvents];
 //            [loadedEvents unionSet:visibleEvents];
 //            [self didChangeValueForKey:@"loadedEvents"];
-            [self willChangeValueForKey:@"loadedEvents" withSetMutation:(NSKeyValueUnionSetMutation) usingObjects:visibleEvents];
+            [self willChangeValueForKey:@"loadedEvents" withSetMutation:NSKeyValueSetSetMutation usingObjects:visibleEvents];
             [loadedEvents minusSet:loadedVisibleEvents];
-            loadedEvents = [[loadedEvents setByAddingObjectsFromSet:visibleEvents] mutableCopy];
-            [self didChangeValueForKey:@"loadedEvents" withSetMutation:(NSKeyValueUnionSetMutation) usingObjects:visibleEvents];
+            [loadedEvents unionSet:visibleEvents];
+            [self didChangeValueForKey:@"loadedEvents" withSetMutation:NSKeyValueSetSetMutation usingObjects:visibleEvents];
         }
     }];
 }

@@ -16,6 +16,8 @@
 		E93C3CD31DF6A864006C9761 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93C3CD21DF6A864006C9761 /* MainMenuViewController.m */; };
 		E9D8F6731DFCD66D0067AB66 /* ParseClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D8F6721DFCD66D0067AB66 /* ParseClient.m */; };
 		E9D8F6761DFCD67C0067AB66 /* EventBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D8F6751DFCD67C0067AB66 /* EventBusiness.m */; };
+		E9F24A261DFE63C8007A5CC5 /* InfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9F24A251DFE63C8007A5CC5 /* InfoWindow.xib */; };
+		E9F24A291DFE7B7B007A5CC5 /* InfoWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F24A281DFE7B7B007A5CC5 /* InfoWindow.m */; };
 		FAA8C4541DED472600C3DD0E /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA8C4531DED472600C3DD0E /* MapViewController.m */; };
 		FAB8DF6B1DE386350091B7B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB8DF6A1DE386350091B7B1 /* main.m */; };
 		FAB8DF6E1DE386350091B7B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB8DF6D1DE386350091B7B1 /* AppDelegate.m */; };
@@ -64,6 +66,9 @@
 		E9D8F6721DFCD66D0067AB66 /* ParseClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseClient.m; sourceTree = "<group>"; };
 		E9D8F6741DFCD67C0067AB66 /* EventBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventBusiness.h; sourceTree = "<group>"; };
 		E9D8F6751DFCD67C0067AB66 /* EventBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventBusiness.m; sourceTree = "<group>"; };
+		E9F24A251DFE63C8007A5CC5 /* InfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoWindow.xib; sourceTree = "<group>"; };
+		E9F24A271DFE7B7B007A5CC5 /* InfoWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoWindow.h; sourceTree = "<group>"; };
+		E9F24A281DFE7B7B007A5CC5 /* InfoWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoWindow.m; sourceTree = "<group>"; };
 		FAA8C4521DED472600C3DD0E /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		FAA8C4531DED472600C3DD0E /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		FAB8DF661DE386350091B7B1 /* eventApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eventApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +191,9 @@
 				E914B8791DF637B700D55EE9 /* styleDay.json */,
 				E93C3CD11DF6A864006C9761 /* MainMenuViewController.h */,
 				E93C3CD21DF6A864006C9761 /* MainMenuViewController.m */,
+				E9F24A251DFE63C8007A5CC5 /* InfoWindow.xib */,
+				E9F24A271DFE7B7B007A5CC5 /* InfoWindow.h */,
+				E9F24A281DFE7B7B007A5CC5 /* InfoWindow.m */,
 			);
 			path = eventApp;
 			sourceTree = "<group>";
@@ -346,6 +354,7 @@
 				E914B8761DF5505600D55EE9 /* SanFranciscoText-Light.ttf in Resources */,
 				E914B87A1DF637B700D55EE9 /* styleDay.json in Resources */,
 				FAB8DF791DE386360091B7B1 /* LaunchScreen.storyboard in Resources */,
+				E9F24A261DFE63C8007A5CC5 /* InfoWindow.xib in Resources */,
 				FAB8DF761DE386360091B7B1 /* Assets.xcassets in Resources */,
 				E914B8781DF6304200D55EE9 /* style.json in Resources */,
 				FAB8DF9D1DE3866B0091B7B1 /* Podfile in Resources */,
@@ -476,6 +485,7 @@
 				FAB8DF6E1DE386350091B7B1 /* AppDelegate.m in Sources */,
 				FAB8DF6B1DE386350091B7B1 /* main.m in Sources */,
 				E93C3CD31DF6A864006C9761 /* MainMenuViewController.m in Sources */,
+				E9F24A291DFE7B7B007A5CC5 /* InfoWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

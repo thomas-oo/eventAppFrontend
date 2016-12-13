@@ -3,7 +3,7 @@
 #import <CoreFoundation/CoreFoundation.h>
 
 @interface EventBusiness : NSObject
-@property NSMutableSet* loadedEvents;
+@property (copy) NSMutableSet* loadedEvents;
 -(id)init NS_UNAVAILABLE;
 -(id)initWithParseClient:(ParseClient*)parseClient;
 

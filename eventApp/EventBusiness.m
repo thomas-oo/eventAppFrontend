@@ -35,10 +35,13 @@ ParseClient* _parseClient;
             //nothing
         }else{
             //replace events in loadedEvents from loadedVisibleEvents with the ones in objects.
+<<<<<<< HEAD
 //            [self willChangeValueForKey:@"loadedEvents"];
 //            [loadedEvents minusSet:loadedVisibleEvents];
 //            [loadedEvents unionSet:visibleEvents];
 //            [self didChangeValueForKey:@"loadedEvents"];
+=======
+>>>>>>> master
             [self willChangeValueForKey:@"loadedEvents" withSetMutation:NSKeyValueSetSetMutation usingObjects:visibleEvents];
             [loadedEvents minusSet:loadedVisibleEvents];
             [loadedEvents unionSet:visibleEvents];

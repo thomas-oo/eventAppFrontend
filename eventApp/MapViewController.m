@@ -3,6 +3,7 @@
 #import <GooglePlaces/GooglePlaces.h>
 #import "Event.h"
 #import "EventBusiness.h"
+#import "InfoWindow.h"
 @interface MapViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *marker;
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
@@ -89,15 +90,15 @@ EventBusiness* eventBusiness;
     _addressLabel.text = @"";
 }
 - (IBAction)doneButtonClicked:(id)sender {
-    NSString* name = @"Party";
+    NSString* name = @"Samosa";
     NSString* host = @"Thomas Oo";
     NSDate* startTime = [[NSDate alloc] init];
     NSDate* endTime = [[NSDate alloc] init];
     CLLocationCoordinate2D currentCoordinates = [currentPosition target];
     PFGeoPoint* location = [PFGeoPoint geoPointWithLatitude:currentCoordinates.latitude longitude:currentCoordinates.longitude];
     NSNumber* price = @20;
-    
-    Event* newEvent = [[Event alloc] initEventWithName:name Host:host StartTime:startTime EndTime:endTime Location:location Price:price];
+    UIImage* image = [UIImage imageNamed:@"samosa"];
+    Event* newEvent = [[Event alloc] initEventWithName:name Host:host StartTime:startTime EndTime:endTime Location:location Price:price Image:image];
     
     [newEvent saveInBackgroundWithBlock:^(BOOL success, NSError* error){
         if(success){
@@ -140,15 +141,19 @@ EventBusiness* eventBusiness;
                                                          zoom:15];
         [self.mapView removeObserver:self forKeyPath:@"myLocation"];
     }else if([keyPath isEqualToString:@"loadedEvents"]){
-        //load markers
-        NSMutableSet* events = [change objectForKey:NSKeyValueChangeNewKey];
-        [self.mapView clear];
-        for(Event *event in events){
+        NSMutableSet* addedEvents = [change objectForKey:NSKeyValueChangeNewKey];
+        NSMutableSet* deletedEvents = [change objectForKey:NSKeyValueChangeOldKey];
+        for(Event *event in addedEvents){
             GMSMarker* marker = [event getMarker];
             marker.map = self.mapView;
             marker.title = event.name;
             marker.snippet = event.host;
-            marker.icon = [UIImage imageNamed:@"Party"];
+        }
+        for(Event* event in deletedEvents){
+            GMSMarker* marker = [event getMarker];
+            marker.map = nil;
+            marker.title = nil;
+            marker.snippet = nil;
         }
     }
 }
@@ -156,14 +161,27 @@ EventBusiness* eventBusiness;
 - (void)registerListenerForLoadedEvents{
     [eventBusiness addObserver:self forKeyPath:@"loadedEvents" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(UIView*)mapView:(GMSMapView *)mapView markerInfoWindow:(GMSMarker *)marker{
+    InfoWindow *infoWindow = [[[NSBundle mainBundle] loadNibNamed:@"InfoWindow" owner:self options:nil] objectAtIndex:0];
+    Event* eventOfMarker;
+    
+    //search for the owner of this marker
+    for(Event* event in eventBusiness.loadedEvents){
+        if(event.getMarker == marker){
+            eventOfMarker = event;
+        }else{ //if marker isn't found, remove it (this is as we do not reload events right before this method is called
+            marker.map = nil;
+            marker.title = nil;
+            marker.snippet = nil;
+            return nil;
+        }
+    }
+    //able to access the event that owns this marker
+    [infoWindow.title setText:eventOfMarker.name];
+    [infoWindow.snippet setText:eventOfMarker.host];
+    [infoWindow.image setImage: eventOfMarker.image];
+    return infoWindow;
 }
-*/
 
 @end

@@ -1,3 +1,4 @@
+use_frameworks!
 target 'eventApp' do
 pod 'Parse'
 pod 'ParseUI'
@@ -7,6 +8,7 @@ pod 'FBSDKCoreKit'
 pod 'FBSDKShareKit'
 pod 'GoogleMaps'
 pod 'GooglePlaces'
+pod 'Pulley', :git => 'https://github.com/tadelv/Pulley', :branch => 'objc_friendly'
 
 target 'eventAppTests' do
     inherit! :search_paths

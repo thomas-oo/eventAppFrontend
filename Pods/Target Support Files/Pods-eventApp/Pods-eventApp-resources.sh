@@ -74,22 +74,12 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "FBSDKCoreKit/FacebookSDKStrings.bundle"
   install_resource "GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle"
   install_resource "GooglePlaces/Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle"
-  install_resource "Parse/Parse/Resources/en.lproj"
-  install_resource "ParseUI/ParseUI/Resources/Localization/en.lproj"
-  install_resource "ParseUI/ParseUI/Resources/Localization/fr.lproj"
-  install_resource "ParseUI/ParseUI/Resources/Localization/pt-BR.lproj"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "FBSDKCoreKit/FacebookSDKStrings.bundle"
   install_resource "GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle"
   install_resource "GooglePlaces/Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle"
-  install_resource "Parse/Parse/Resources/en.lproj"
-  install_resource "ParseUI/ParseUI/Resources/Localization/en.lproj"
-  install_resource "ParseUI/ParseUI/Resources/Localization/fr.lproj"
-  install_resource "ParseUI/ParseUI/Resources/Localization/pt-BR.lproj"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

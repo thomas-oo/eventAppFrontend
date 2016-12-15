@@ -21,9 +21,11 @@ ParseClient *parseClient;
 EventBusiness* eventBusiness;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     parseClient = [[ParseClient alloc] init];
     eventBusiness = [[EventBusiness alloc] initWithParseClient:parseClient];
-    // Do any additional setup after loading the view.
+
+    UIEdgeInsets mapInsets = UIEdgeInsetsMake(0, 0, 40, 0);
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:100
                                                             longitude:100
                                                                  zoom:15];
@@ -34,6 +36,7 @@ EventBusiness* eventBusiness;
     self.mapView.settings.rotateGestures = NO;
     self.mapView.settings.tiltGestures = NO;
     [self.mapView setMinZoom:10 maxZoom:20];
+    self.mapView.padding = mapInsets;
     
     [self.mapView addObserver:self
                forKeyPath:@"myLocation"
@@ -42,7 +45,7 @@ EventBusiness* eventBusiness;
     
     NSBundle *mainBundle = [NSBundle mainBundle];
     //TODO: maybe implement a way to switch the map theme depending on the time
-    NSURL *styleUrl = [mainBundle URLForResource:@"style" withExtension:@"json"];
+    NSURL *styleUrl = [mainBundle URLForResource:@"styleDay" withExtension:@"json"];
     NSError *error;
     GMSMapStyle *style = [GMSMapStyle styleWithContentsOfFileURL:styleUrl error:&error];
     if (!style) {

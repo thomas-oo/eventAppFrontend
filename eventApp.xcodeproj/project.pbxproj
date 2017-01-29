@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7AC930A95B7FB159B000999E /* libPods-eventApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5982F00E521E6C0A50226C /* libPods-eventApp.a */; };
-		BCAFB2537805DE0363E12437 /* libPods-eventAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E3A6C9B00FF2A9F943082D /* libPods-eventAppTests.a */; };
+		502A6D08C6EBF343C3C86A2F /* Pods_eventApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E3C7CD67FFE8CC51C2EC23 /* Pods_eventApp.framework */; };
 		E914B8731DF5317B00D55EE9 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E914B8721DF5317B00D55EE9 /* LogInViewController.m */; };
 		E914B8761DF5505600D55EE9 /* SanFranciscoText-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E914B8751DF54F1C00D55EE9 /* SanFranciscoText-Light.ttf */; };
 		E914B8781DF6304200D55EE9 /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = E914B8771DF6304200D55EE9 /* style.json */; };
 		E914B87A1DF637B700D55EE9 /* styleDay.json in Resources */ = {isa = PBXBuildFile; fileRef = E914B8791DF637B700D55EE9 /* styleDay.json */; };
 		E93C3CD31DF6A864006C9761 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93C3CD21DF6A864006C9761 /* MainMenuViewController.m */; };
+		E9B06B711E020B9F00229D1B /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B06B701E020B9F00229D1B /* FilterViewController.m */; };
 		E9D8F6731DFCD66D0067AB66 /* ParseClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D8F6721DFCD66D0067AB66 /* ParseClient.m */; };
 		E9D8F6761DFCD67C0067AB66 /* EventBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D8F6751DFCD67C0067AB66 /* EventBusiness.m */; };
 		E9F24A261DFE63C8007A5CC5 /* InfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9F24A251DFE63C8007A5CC5 /* InfoWindow.xib */; };
@@ -29,6 +29,7 @@
 		FAB8DF9D1DE3866B0091B7B1 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FAB8DF9C1DE3866B0091B7B1 /* Podfile */; };
 		FAB8DFA91DE39E6B0091B7B1 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB8DFA81DE39E6B0091B7B1 /* Event.m */; };
 		FAB8DFAB1DE3AB880091B7B1 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB8DFAA1DE3AB880091B7B1 /* libsqlite3.tbd */; };
+		FB545C632B879458DE893F0B /* Pods_eventAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5696C75E986E979B7755136 /* Pods_eventAppTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,11 +50,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2E5982F00E521E6C0A50226C /* libPods-eventApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-eventApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		29E3C7CD67FFE8CC51C2EC23 /* Pods_eventApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eventApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C8F0C82CF611CAC46D83D54 /* Pods-eventAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eventAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-eventAppTests/Pods-eventAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		725C152859638777503B8A0F /* Pods-eventApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eventApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-eventApp/Pods-eventApp.debug.xcconfig"; sourceTree = "<group>"; };
-		78E3A6C9B00FF2A9F943082D /* libPods-eventAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-eventAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EA7B8E5537F6EE8F8DF0749 /* Pods-eventAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eventAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-eventAppTests/Pods-eventAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		A5696C75E986E979B7755136 /* Pods_eventAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eventAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB06548DC021599EE97C9AF8 /* Pods-eventApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eventApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-eventApp/Pods-eventApp.release.xcconfig"; sourceTree = "<group>"; };
 		E914B8711DF5317B00D55EE9 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		E914B8721DF5317B00D55EE9 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
@@ -62,6 +63,8 @@
 		E914B8791DF637B700D55EE9 /* styleDay.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = styleDay.json; sourceTree = "<group>"; };
 		E93C3CD11DF6A864006C9761 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		E93C3CD21DF6A864006C9761 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		E9B06B6F1E020B9F00229D1B /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
+		E9B06B701E020B9F00229D1B /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
 		E9D8F6711DFCD66D0067AB66 /* ParseClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseClient.h; sourceTree = "<group>"; };
 		E9D8F6721DFCD66D0067AB66 /* ParseClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseClient.m; sourceTree = "<group>"; };
 		E9D8F6741DFCD67C0067AB66 /* EventBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventBusiness.h; sourceTree = "<group>"; };
@@ -99,7 +102,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAB8DFAB1DE3AB880091B7B1 /* libsqlite3.tbd in Frameworks */,
-				7AC930A95B7FB159B000999E /* libPods-eventApp.a in Frameworks */,
+				502A6D08C6EBF343C3C86A2F /* Pods_eventApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,7 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCAFB2537805DE0363E12437 /* libPods-eventAppTests.a in Frameworks */,
+				FB545C632B879458DE893F0B /* Pods_eventAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,8 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				FAB8DFAA1DE3AB880091B7B1 /* libsqlite3.tbd */,
-				2E5982F00E521E6C0A50226C /* libPods-eventApp.a */,
-				78E3A6C9B00FF2A9F943082D /* libPods-eventAppTests.a */,
+				29E3C7CD67FFE8CC51C2EC23 /* Pods_eventApp.framework */,
+				A5696C75E986E979B7755136 /* Pods_eventAppTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -140,6 +143,71 @@
 				8EA7B8E5537F6EE8F8DF0749 /* Pods-eventAppTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E9B06B691E00CF9400229D1B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FAA8C4521DED472600C3DD0E /* MapViewController.h */,
+				FAA8C4531DED472600C3DD0E /* MapViewController.m */,
+				FAB8DF6F1DE386350091B7B1 /* ViewController.h */,
+				FAB8DF701DE386350091B7B1 /* ViewController.m */,
+				E914B8711DF5317B00D55EE9 /* LogInViewController.h */,
+				E914B8721DF5317B00D55EE9 /* LogInViewController.m */,
+				E93C3CD11DF6A864006C9761 /* MainMenuViewController.h */,
+				E93C3CD21DF6A864006C9761 /* MainMenuViewController.m */,
+				E9B06B6F1E020B9F00229D1B /* FilterViewController.h */,
+				E9B06B701E020B9F00229D1B /* FilterViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E9B06B6A1E00CFA600229D1B /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				E9D8F6741DFCD67C0067AB66 /* EventBusiness.h */,
+				E9D8F6751DFCD67C0067AB66 /* EventBusiness.m */,
+			);
+			name = Business;
+			sourceTree = "<group>";
+		};
+		E9B06B6B1E00CFAE00229D1B /* ParseClient */ = {
+			isa = PBXGroup;
+			children = (
+				E9D8F6711DFCD66D0067AB66 /* ParseClient.h */,
+				E9D8F6721DFCD66D0067AB66 /* ParseClient.m */,
+			);
+			name = ParseClient;
+			sourceTree = "<group>";
+		};
+		E9B06B6C1E00CFCC00229D1B /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				FAB8DFD41DE4BE960091B7B1 /* eventApp.entitlements */,
+				FAB8DF7A1DE386360091B7B1 /* Info.plist */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		E9B06B6D1E00CFD300229D1B /* InfoWindow */ = {
+			isa = PBXGroup;
+			children = (
+				E9F24A251DFE63C8007A5CC5 /* InfoWindow.xib */,
+				E9F24A271DFE7B7B007A5CC5 /* InfoWindow.h */,
+				E9F24A281DFE7B7B007A5CC5 /* InfoWindow.m */,
+			);
+			name = InfoWindow;
+			sourceTree = "<group>";
+		};
+		E9B06B6E1E00D04600229D1B /* Styling */ = {
+			isa = PBXGroup;
+			children = (
+				E914B8751DF54F1C00D55EE9 /* SanFranciscoText-Light.ttf */,
+				FAB8DF751DE386360091B7B1 /* Assets.xcassets */,
+				E914B8771DF6304200D55EE9 /* style.json */,
+				E914B8791DF637B700D55EE9 /* styleDay.json */,
+			);
+			name = Styling;
 			sourceTree = "<group>";
 		};
 		FAB8DF5D1DE386350091B7B1 = {
@@ -168,32 +236,14 @@
 		FAB8DF681DE386350091B7B1 /* eventApp */ = {
 			isa = PBXGroup;
 			children = (
-				E9D8F6741DFCD67C0067AB66 /* EventBusiness.h */,
-				E9D8F6751DFCD67C0067AB66 /* EventBusiness.m */,
-				E9D8F6711DFCD66D0067AB66 /* ParseClient.h */,
-				E9D8F6721DFCD66D0067AB66 /* ParseClient.m */,
-				FAB8DFD41DE4BE960091B7B1 /* eventApp.entitlements */,
-				E914B8751DF54F1C00D55EE9 /* SanFranciscoText-Light.ttf */,
 				FAB8DF6C1DE386350091B7B1 /* AppDelegate.h */,
 				FAB8DF6D1DE386350091B7B1 /* AppDelegate.m */,
-				FAA8C4521DED472600C3DD0E /* MapViewController.h */,
-				FAA8C4531DED472600C3DD0E /* MapViewController.m */,
-				FAB8DF6F1DE386350091B7B1 /* ViewController.h */,
-				FAB8DF701DE386350091B7B1 /* ViewController.m */,
-				E914B8711DF5317B00D55EE9 /* LogInViewController.h */,
-				E914B8721DF5317B00D55EE9 /* LogInViewController.m */,
 				FAB8DF721DE386360091B7B1 /* Main.storyboard */,
-				FAB8DF751DE386360091B7B1 /* Assets.xcassets */,
 				FAB8DF771DE386360091B7B1 /* LaunchScreen.storyboard */,
-				FAB8DF7A1DE386360091B7B1 /* Info.plist */,
+				E9B06B691E00CF9400229D1B /* ViewControllers */,
 				FAB8DF691DE386350091B7B1 /* Supporting Files */,
-				E914B8771DF6304200D55EE9 /* style.json */,
-				E914B8791DF637B700D55EE9 /* styleDay.json */,
-				E93C3CD11DF6A864006C9761 /* MainMenuViewController.h */,
-				E93C3CD21DF6A864006C9761 /* MainMenuViewController.m */,
-				E9F24A251DFE63C8007A5CC5 /* InfoWindow.xib */,
-				E9F24A271DFE7B7B007A5CC5 /* InfoWindow.h */,
-				E9F24A281DFE7B7B007A5CC5 /* InfoWindow.m */,
+				E9B06B6E1E00D04600229D1B /* Styling */,
+				E9B06B6C1E00CFCC00229D1B /* Misc */,
 			);
 			path = eventApp;
 			sourceTree = "<group>";
@@ -201,6 +251,9 @@
 		FAB8DF691DE386350091B7B1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E9B06B6D1E00CFD300229D1B /* InfoWindow */,
+				E9B06B6A1E00CFA600229D1B /* Business */,
+				E9B06B6B1E00CFAE00229D1B /* ParseClient */,
 				FAB8DFA61DE39E2E0091B7B1 /* DTO */,
 				FAB8DF6A1DE386350091B7B1 /* main.m */,
 			);
@@ -301,7 +354,7 @@
 		FAB8DF5E1DE386350091B7B1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Oo, Thein";
 				TargetAttributes = {
 					FAB8DF651DE386350091B7B1 = {
@@ -479,6 +532,7 @@
 				FAB8DF711DE386350091B7B1 /* ViewController.m in Sources */,
 				E9D8F6761DFCD67C0067AB66 /* EventBusiness.m in Sources */,
 				FAB8DFA91DE39E6B0091B7B1 /* Event.m in Sources */,
+				E9B06B711E020B9F00229D1B /* FilterViewController.m in Sources */,
 				E914B8731DF5317B00D55EE9 /* LogInViewController.m in Sources */,
 				FAA8C4541DED472600C3DD0E /* MapViewController.m in Sources */,
 				E9D8F6731DFCD66D0067AB66 /* ParseClient.m in Sources */,
@@ -557,6 +611,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -604,6 +659,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -631,6 +687,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 725C152859638777503B8A0F /* Pods-eventApp.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_MODULES_AUTOLINK = YES;
 				CODE_SIGN_ENTITLEMENTS = eventApp/eventApp.entitlements;
@@ -651,6 +708,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DB06548DC021599EE97C9AF8 /* Pods-eventApp.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_MODULES_AUTOLINK = YES;
 				CODE_SIGN_ENTITLEMENTS = eventApp/eventApp.entitlements;

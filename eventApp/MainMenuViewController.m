@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [[UITabBar appearance] setBarTintColor:[self colorFromHexString:@"#242f3e"]];
+    [[UITabBar appearance] setBarTintColor:[self colorFromHexString:@"#ffffff"]];
     [[UITabBar appearance] setBarStyle:UIBarStyleBlack];
 }
 

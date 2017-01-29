@@ -19,6 +19,7 @@ BOOL firstLocationUpdate;
 GMSCameraPosition* currentPosition;
 ParseClient *parseClient;
 EventBusiness* eventBusiness;
+NSDateFormatter *dateFormat = nil;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -173,17 +174,17 @@ EventBusiness* eventBusiness;
     for(Event* event in eventBusiness.loadedEvents){
         if(event.getMarker == marker){
             eventOfMarker = event;
-        }else{ //if marker isn't found, remove it (this is as we do not reload events right before this method is called
-            marker.map = nil;
-            marker.title = nil;
-            marker.snippet = nil;
-            return nil;
+            continue;
         }
     }
     //able to access the event that owns this marker
     [infoWindow.title setText:eventOfMarker.name];
     [infoWindow.snippet setText:eventOfMarker.host];
     [infoWindow.image setImage: eventOfMarker.image];
+    NSDateFormatter* df = [[NSDateFormatter alloc]init];
+    [df setDateFormat:@"MMM dd yyyy h:mm a"];
+    [infoWindow.startDate setText:[df stringFromDate:eventOfMarker.startTime]];
+    [infoWindow.endDate setText:[df stringFromDate:eventOfMarker.endTime]];
     return infoWindow;
 }
 

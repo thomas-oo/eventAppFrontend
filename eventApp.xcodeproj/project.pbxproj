@@ -13,6 +13,7 @@
 		E914B8781DF6304200D55EE9 /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = E914B8771DF6304200D55EE9 /* style.json */; };
 		E914B87A1DF637B700D55EE9 /* styleDay.json in Resources */ = {isa = PBXBuildFile; fileRef = E914B8791DF637B700D55EE9 /* styleDay.json */; };
 		E93C3CD31DF6A864006C9761 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E93C3CD21DF6A864006C9761 /* MainMenuViewController.m */; };
+		E99431D01E3F92E700EBB002 /* CreateEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99431CF1E3F92E700EBB002 /* CreateEventViewController.m */; };
 		E9B06B711E020B9F00229D1B /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B06B701E020B9F00229D1B /* FilterViewController.m */; };
 		E9D8F6731DFCD66D0067AB66 /* ParseClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D8F6721DFCD66D0067AB66 /* ParseClient.m */; };
 		E9D8F6761DFCD67C0067AB66 /* EventBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D8F6751DFCD67C0067AB66 /* EventBusiness.m */; };
@@ -63,6 +64,8 @@
 		E914B8791DF637B700D55EE9 /* styleDay.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = styleDay.json; sourceTree = "<group>"; };
 		E93C3CD11DF6A864006C9761 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		E93C3CD21DF6A864006C9761 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		E99431CE1E3F92E700EBB002 /* CreateEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateEventViewController.h; sourceTree = "<group>"; };
+		E99431CF1E3F92E700EBB002 /* CreateEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateEventViewController.m; sourceTree = "<group>"; };
 		E9B06B6F1E020B9F00229D1B /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
 		E9B06B701E020B9F00229D1B /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
 		E9D8F6711DFCD66D0067AB66 /* ParseClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseClient.h; sourceTree = "<group>"; };
@@ -158,6 +161,8 @@
 				E93C3CD21DF6A864006C9761 /* MainMenuViewController.m */,
 				E9B06B6F1E020B9F00229D1B /* FilterViewController.h */,
 				E9B06B701E020B9F00229D1B /* FilterViewController.m */,
+				E99431CE1E3F92E700EBB002 /* CreateEventViewController.h */,
+				E99431CF1E3F92E700EBB002 /* CreateEventViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -536,6 +541,7 @@
 				E914B8731DF5317B00D55EE9 /* LogInViewController.m in Sources */,
 				FAA8C4541DED472600C3DD0E /* MapViewController.m in Sources */,
 				E9D8F6731DFCD66D0067AB66 /* ParseClient.m in Sources */,
+				E99431D01E3F92E700EBB002 /* CreateEventViewController.m in Sources */,
 				FAB8DF6E1DE386350091B7B1 /* AppDelegate.m in Sources */,
 				FAB8DF6B1DE386350091B7B1 /* main.m in Sources */,
 				E93C3CD31DF6A864006C9761 /* MainMenuViewController.m in Sources */,

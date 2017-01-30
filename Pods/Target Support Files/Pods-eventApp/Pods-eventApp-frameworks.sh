@@ -84,20 +84,24 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/ASValueTrackingSlider/ASValueTrackingSlider.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Bolts/Bolts.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FBSDKCoreKit/FBSDKCoreKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FBSDKLoginKit/FBSDKLoginKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FBSDKShareKit/FBSDKShareKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/JVFloatLabeledTextField/JVFloatLabeledTextField.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Parse/Parse.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ParseFacebookUtilsV4/ParseFacebookUtilsV4.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ParseUI/ParseUI.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Pulley/Pulley.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/ASValueTrackingSlider/ASValueTrackingSlider.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Bolts/Bolts.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FBSDKCoreKit/FBSDKCoreKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FBSDKLoginKit/FBSDKLoginKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FBSDKShareKit/FBSDKShareKit.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/JVFloatLabeledTextField/JVFloatLabeledTextField.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Parse/Parse.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ParseFacebookUtilsV4/ParseFacebookUtilsV4.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ParseUI/ParseUI.framework"

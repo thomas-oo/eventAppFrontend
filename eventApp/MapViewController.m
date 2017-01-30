@@ -93,6 +93,7 @@ NSDateFormatter *dateFormat = nil;
     [_addressLabel setHidden:YES];
     _addressLabel.text = @"";
 }
+
 - (IBAction)doneButtonClicked:(id)sender {
     NSString* name = @"Samosa";
     NSString* host = @"Thomas Oo";
@@ -186,6 +187,22 @@ NSDateFormatter *dateFormat = nil;
     [infoWindow.startDate setText:[df stringFromDate:eventOfMarker.startTime]];
     [infoWindow.endDate setText:[df stringFromDate:eventOfMarker.endTime]];
     return infoWindow;
+}
+
+- (IBAction)cancelToMapViewController:(UIStoryboardSegue*)sender{
+    [self loadMarkers];
+}
+
+- (IBAction)doneToMapViewController:(UIStoryboardSegue*)sender{
+    [self loadMarkers];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([[segue identifier] isEqualToString:@"createEventSegue"]){
+        CreateEventViewController *vc = segue.destinationViewController;
+        CLLocationCoordinate2D currentCoordinates = [currentPosition target];
+        [vc setCoordinates:currentCoordinates];
+    }
 }
 
 @end

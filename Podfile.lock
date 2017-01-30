@@ -1,4 +1,5 @@
 PODS:
+  - ASValueTrackingSlider (0.12.1)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -18,6 +19,7 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (2.1.1):
     - GoogleMaps/Base (= 2.1.1)
+  - JVFloatLabeledTextField (1.1.1)
   - Parse (1.14.2):
     - Bolts/Tasks (~> 1.8)
   - ParseFacebookUtilsV4 (1.11.1):
@@ -32,11 +34,13 @@ PODS:
   - Pulley (1.3.0)
 
 DEPENDENCIES:
+  - ASValueTrackingSlider
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
   - GoogleMaps
   - GooglePlaces
+  - JVFloatLabeledTextField
   - Parse
   - ParseFacebookUtilsV4
   - ParseUI
@@ -53,17 +57,19 @@ CHECKOUT OPTIONS:
     :git: https://github.com/tadelv/Pulley
 
 SPEC CHECKSUMS:
+  ASValueTrackingSlider: 5261de3fcf00adb339efc93885e8f0bc99e703cd
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   FBSDKCoreKit: 15fef8804a4629f98c6f4e55e81a76c9d725d85e
   FBSDKLoginKit: 6773073e970b2b15fb12e451ce7f11da0532b880
   FBSDKShareKit: 0b8d6cc3f103c75297eb3c62caec284a2ccf1b9e
   GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
   GooglePlaces: 35636d86e5020cba3856eb988c09a5491de0a65a
+  JVFloatLabeledTextField: 0e5524b097f102036214dd8279edc8ecf08b5e18
   Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
   ParseFacebookUtilsV4: 2f30c2b7021c8005d3042781da7ef87d06589421
   ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
   Pulley: 5123ca4b89cd89e3c7ac92b643f892aa7738f374
 
-PODFILE CHECKSUM: fe59cf7e58babcefa3ad4c4b1d87c4879c2f2732
+PODFILE CHECKSUM: 3287a5945072a9f9b2b38a0a4cbcfc5bfd2ea033
 
 COCOAPODS: 1.1.1

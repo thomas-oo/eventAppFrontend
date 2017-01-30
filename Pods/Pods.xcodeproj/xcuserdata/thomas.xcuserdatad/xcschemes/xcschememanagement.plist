@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>ASValueTrackingSlider.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Bolts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -20,6 +25,11 @@
 			<false/>
 		</dict>
 		<key>FBSDKShareKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JVFloatLabeledTextField.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -57,6 +67,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0BB6F5A6E34373273224950DFD850853</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2A4448146C785C426971111F117D773C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2A52779AA0BD86BA0CEB8753126ED2FE</key>
 		<dict>
 			<key>primary</key>
@@ -67,17 +87,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>4B502E85EE15171335DD049AE5ECC10F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>51CB0AF616C6306147B99C320EB6D3ED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>59F1A15B58BE1C3642E5E43F27043508</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5F4D922B97C78C2B1688CD991DC59C8C</key>
+		<key>9F510D2B6A00360BAB8430120448D98C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

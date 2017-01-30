@@ -9,6 +9,8 @@ pod 'FBSDKShareKit'
 pod 'GoogleMaps'
 pod 'GooglePlaces'
 pod 'Pulley', :git => 'https://github.com/tadelv/Pulley', :branch => 'objc_friendly'
+pod 'ASValueTrackingSlider'
+pod 'JVFloatLabeledTextField'
 
 target 'eventAppTests' do
     inherit! :search_paths

@@ -93,6 +93,7 @@ NSDateFormatter *dateFormat = nil;
     [_addressLabel setHidden:YES];
     _addressLabel.text = @"";
 }
+
 - (IBAction)doneButtonClicked:(id)sender {
     NSString* name = @"Samosa";
     NSString* host = @"Thomas Oo";

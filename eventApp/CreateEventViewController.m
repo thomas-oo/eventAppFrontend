@@ -1,16 +1,8 @@
-//
-//  CreateEventViewController.m
-//  eventApp
-//
-//  Created by Thomas Oo on 2017-01-30.
-//  Copyright © 2017 Oo, Thein. All rights reserved.
-//
-
 #import "CreateEventViewController.h"
-
 @interface CreateEventViewController ()
-@property (strong, nonatomic) IBOutlet UISlider *pricePicker;
-@property (strong, nonatomic) IBOutlet UILabel *currentPriceLabel;
+@property (strong, nonatomic) IBOutlet ASValueTrackingSlider *pricePicker;
+@property (strong, nonatomic) IBOutlet UIDatePicker *toPicker;
+@property (strong, nonatomic) IBOutlet UIDatePicker *fromPicker;
 
 @end
 
@@ -18,25 +10,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _pricePicker.maximumValue = 100;
+    _pricePicker.popUpViewCornerRadius = 8.0;
+    [_pricePicker setMaxFractionDigitsDisplayed:0];
+    _pricePicker.font = [UIFont fontWithName:@"Helvetica-Light" size:15];
+    [_pricePicker showPopUpViewAnimated:NO];
+    _pricePicker.dataSource = self;
     // Do any additional setup after loading the view.
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-- (IBAction)valueChanged:(id)sender {
-    _currentPriceLabel.text = [NSString stringWithFormat:@"%.2f", _pricePicker.value];
+- (IBAction)roundValues:(id)sender {
+    _pricePicker.value = round(_pricePicker.value);
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSString *)slider:(ASValueTrackingSlider *)slider stringForValue:(float)value{
+    return [NSString stringWithFormat:@"$%.0f", value];
 }
-*/
+
+- (IBAction)changeToPicker:(id)sender {
+    _toPicker.minimumDate = _fromPicker.date;
+}
+
 
 @end

@@ -189,4 +189,8 @@ NSDateFormatter *dateFormat = nil;
     return infoWindow;
 }
 
+- (IBAction)cancelToMapViewController:(UIStoryboardSegue*)sender{
+    
+}
+
 @end

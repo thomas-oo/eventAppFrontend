@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'A760316124FD796EF09C09479E9F0021'
-               BlueprintName = 'ParseUI'
+               BlueprintIdentifier = '9F510D2B6A00360BAB8430120448D98C'
+               BlueprintName = 'ASValueTrackingSlider'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'ParseUI.framework'>
+               BuildableName = 'ASValueTrackingSlider.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>JVFloatLabeledTextField.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,6 +67,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0BB6F5A6E34373273224950DFD850853</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2A4448146C785C426971111F117D773C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2A52779AA0BD86BA0CEB8753126ED2FE</key>
 		<dict>
 			<key>primary</key>
@@ -72,17 +87,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>4B502E85EE15171335DD049AE5ECC10F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>51CB0AF616C6306147B99C320EB6D3ED</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6CD56046920167C8D9E902FB3305E08B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>841B1618E244A770D350335A2E29BFD3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

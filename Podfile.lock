@@ -19,6 +19,7 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (2.1.1):
     - GoogleMaps/Base (= 2.1.1)
+  - JVFloatLabeledTextField (1.1.1)
   - Parse (1.14.2):
     - Bolts/Tasks (~> 1.8)
   - ParseFacebookUtilsV4 (1.11.1):
@@ -39,6 +40,7 @@ DEPENDENCIES:
   - FBSDKShareKit
   - GoogleMaps
   - GooglePlaces
+  - JVFloatLabeledTextField
   - Parse
   - ParseFacebookUtilsV4
   - ParseUI
@@ -62,11 +64,12 @@ SPEC CHECKSUMS:
   FBSDKShareKit: 0b8d6cc3f103c75297eb3c62caec284a2ccf1b9e
   GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
   GooglePlaces: 35636d86e5020cba3856eb988c09a5491de0a65a
+  JVFloatLabeledTextField: 0e5524b097f102036214dd8279edc8ecf08b5e18
   Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
   ParseFacebookUtilsV4: 2f30c2b7021c8005d3042781da7ef87d06589421
   ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
   Pulley: 5123ca4b89cd89e3c7ac92b643f892aa7738f374
 
-PODFILE CHECKSUM: 45475bc15df5392e6012ef371f36493fe8b9f9cb
+PODFILE CHECKSUM: 3287a5945072a9f9b2b38a0a4cbcfc5bfd2ea033
 
 COCOAPODS: 1.1.1

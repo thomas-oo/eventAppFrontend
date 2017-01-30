@@ -193,4 +193,16 @@ NSDateFormatter *dateFormat = nil;
     
 }
 
+- (IBAction)doneToMapViewController:(UIStoryboardSegue*)sender{
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([[segue identifier] isEqualToString:@"createEventSegue"]){
+        CreateEventViewController *vc = segue.destinationViewController;
+        CLLocationCoordinate2D currentCoordinates = [currentPosition target];
+        [vc setCoordinates:currentCoordinates];
+    }
+}
+
 @end

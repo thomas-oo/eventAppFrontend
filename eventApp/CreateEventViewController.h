@@ -2,6 +2,7 @@
 #import "ASValueTrackingSlider.h"
 #import "JVFloatLabeledTextField.h"
 #import "ParseClient.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface CreateEventViewController : UIViewController<ASValueTrackingSliderDataSource,UITextFieldDelegate>
 

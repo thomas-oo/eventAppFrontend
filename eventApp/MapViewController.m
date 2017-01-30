@@ -190,11 +190,11 @@ NSDateFormatter *dateFormat = nil;
 }
 
 - (IBAction)cancelToMapViewController:(UIStoryboardSegue*)sender{
-    
+    [self loadMarkers];
 }
 
 - (IBAction)doneToMapViewController:(UIStoryboardSegue*)sender{
-    
+    [self loadMarkers];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

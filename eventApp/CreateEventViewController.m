@@ -45,15 +45,34 @@ CLLocationCoordinate2D currentCoordinates;
 }
 
 - (IBAction)createEvent:(id)sender {
-    NSString* name = _eventNameField.text;
-    NSString* host = [[PFUser currentUser] username];
-    NSDate* startTime = _fromPicker.date;
-    NSDate* endTime = _toPicker.date;
-    PFGeoPoint* location = [PFGeoPoint geoPointWithLatitude:currentCoordinates.latitude longitude:currentCoordinates.longitude];
-    NSNumber* price = [NSNumber numberWithFloat:_pricePicker.value];
-    UIImage* image = [UIImage imageNamed:@"samosa"];
-    Event* newEvent = [[Event alloc] initEventWithName:name Host:host StartTime:startTime EndTime:endTime Location:location Price:price Image:image];
+    if ([FBSDKAccessToken currentAccessToken]) {
+        [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
+         startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+             if (!error) {
+                 NSLog(@"fetched user:%@", result);
+                 
+                 NSString* name = _eventNameField.text;
+                 NSString* host = [result valueForKey:@"name"];
+                 NSDate* startTime = _fromPicker.date;
+                 NSDate* endTime = _toPicker.date;
+                 PFGeoPoint* location = [PFGeoPoint geoPointWithLatitude:currentCoordinates.latitude longitude:currentCoordinates.longitude];
+                 NSNumber* price = [NSNumber numberWithFloat:_pricePicker.value];
+                 UIImage* image = [UIImage imageNamed:@"samosa"];
+                 Event* newEvent = [[Event alloc] initEventWithName:name Host:host StartTime:startTime EndTime:endTime Location:location Price:price Image:image];
+                 //TODO: check for valid input so that event creation does not crash. If invalid input, reflect it to the user.
+                 [newEvent saveInBackgroundWithBlock:^(BOOL success, NSError* error){
+                     if(success){
+                         [self performSegueWithIdentifier:@"successSegue" sender:nil];
+                     }else{
+                         //TODO: on failure to save, reflect the error to the user.
+                         NSLog(@"Failed to save event.");
+                     }
+                 }];
+             }
+         }];
+    }
 }
+
 
 
 @end
